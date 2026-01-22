@@ -1,0 +1,10 @@
+# Diretório de executáveis compilados
+bin/
+out/
+dist/
+
+# Arquivos de compilação
+*.o
+*.obj
+*.out
+app

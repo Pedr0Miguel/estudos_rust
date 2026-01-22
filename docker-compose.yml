@@ -1,0 +1,10 @@
+services:
+  rust:
+    build: .
+    container_name: rust-dev
+    user: "1000:1000"
+    volumes:
+      - ./src:/app
+    working_dir: /app
+    tty: true
+    stdin_open: true
