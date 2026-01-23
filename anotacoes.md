@@ -43,7 +43,7 @@ exemplo:
 
 type Metros = i32;
 
-#[allow(unused_variables)] // Basicamente aqui neste trecho dizemos para o compilador tolerar uma variável que não usamos para nada.    
+#![allow(unused_variables)] // Basicamente aqui neste trecho dizemos para o compilador tolerar uma variável que não usamos para nada.    
 fn main() {
     
 let altura: Metros = 1600;

@@ -1,3 +1,4 @@
+#![allow(unused_variables)]
 type Metros = i32;
 fn main() {
     #[allow(unused_variables)]
