@@ -1,4 +1,4 @@
-FROM rust:nightly-bookworm
+FROM rust:latest
 
 # Install minimal required packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -32,8 +32,11 @@ ENV RUST_BACKTRACE=1
 ENV CARGO_HOME=/home/$USERNAME/.cargo
 ENV PATH=$CARGO_HOME/bin:$PATH
 
+# Create workspace directory
 WORKDIR /workspace
 
+# Set default shell
 SHELL ["/bin/bash", "-c"]
 
+# Default command
 CMD ["bash"]

@@ -1,163 +1,133 @@
-**Introdução**
+# Learn to Code with Rust 🦀
 
-Este projeto contém um exemplo mínimo para programar em C++ usando Docker, sem precisar instalar compiladores localmente.
+Um ambiente Docker completo para aprender Rust com todas as ferramentas de desenvolvimento pré-configuradas.
 
-Arquivos criados:
-- [docker-compose.yml](docker-compose.yml)
-- [src/main.cpp](src/main.cpp)
+## 📋 Estrutura
 
-**Como funciona (resumo)**
-- A imagem Docker fornece o compilador/ambiente.
-- No desenvolvimento usamos um volume (bind mount) `./src:/app`, então você edita no PC e o container vê as mudanças.
-- O comando do container compila e executa `main.cpp` a cada start.
+Este projeto é um repositório educacional com múltiplos exemplos e exercícios Rust:
 
-**Usar (C++)**
-1. Abra um terminal na pasta do projeto.
-2. Suba o container (build + run):
+- **learn-to-code-with-rust/**: Exercícios organizados por tópico (closures, control-flow, data-types, enums, functions, generics, hash-maps, iterators, lifetimes, option-and-result-enums, ownership, random, regular-expressions, slices, smart-pointers, strings, structs, testing, traits, variables-and-mutability, vectors, etc.)
+- **.devcontainer/**: Configuração completa para desenvolvimento em VS Code Dev Containers
+
+## 🚀 Usar com VS Code Dev Containers
+
+1. Abra a pasta do projeto no VS Code
+2. Clique em "Reabrir em Container" quando aparecer a notificação
+3. Pronto! O ambiente Rust está configurado automaticamente
+
+Todas as extensões e ferramentas serão instaladas automaticamente.
+
+## 🐳 Usar com Docker Compose
+
 ```bash
-docker compose up --build
+# Build e start o container
+docker compose up -d
+
+# Abrir um shell no container
+docker compose exec rust bash
 ```
-3. Edite `src/main.cpp` localmente. Para ver alterações, pare (`Ctrl+C`) e rode novamente.
-4. Para abrir um shell no container em execução:
+
+## 📦 Ferramentas Instaladas
+
+**Ambiente:**
+- Rust 1.82 stable com rustfmt, clippy, rust-analyzer
+- Git, curl, build-essential, pkg-config
+
+**VS Code Extensions:**
+- rust-analyzer: IntelliSense e análise de código Rust
+- even-better-toml: Suporte a TOML
+- Crates: Gerenciador de dependências
+- LLDB: Debug integrado
+- GitHub Copilot: Assistente de código
+- Test Explorer: Interface visual para testes
+
+**Cargo Tools:**
+- `cargo-watch`: Recompilar automaticamente ao salvar
+- `cargo-edit`: Editar Cargo.toml de forma interativa
+- `cargo-tree`: Visualizar árvore de dependências
+- `cargo-expand`: Expandir macros
+- `cargo-audit`: Auditoria de vulnerabilidades
+- `cargo-outdated`: Verificar atualizações de dependências
+- `bacon`: Execução contínua de testes
+
+## 📚 Executar Exercícios
+
+Cada pasta em `learn-to-code-with-rust/` contém:
+- `src/main.rs`: Exemplo/introdução do tópico
+- `src/coding_challenge.rs`: Desafio para praticar
+- `Cargo.toml`: Configuração e dependências
+
+### Exemplos:
+
 ```bash
+# Navegar para um exercício
+cd learn-to-code-with-rust/functions
 
-docker compose exec cpp sh
+# Executar o exemplo
+cargo run
+
+# Executar o desafio
+cargo run --bin coding_challenge
+
+# Rodar testes
+cargo test
+
+# Com cargo-watch (recompila ao salvar)
+cargo watch -x run
 ```
 
-**Modelos rápidos para outras linguagens**
+## 📝 Atalhos Úteis
 
-Rust (desenvolvimento, bind mount):
-Dockerfile exemplo:
-```Dockerfile
-FROM rust:1.72
-WORKDIR /app
-CMD ["sh", "-c", "cargo run"]
-```
-docker-compose.yml snippet:
-```yaml
-services:
-  rust:
-    build: .
-    volumes:
-      - ./src:/app
-    command: cargo run
-```
-
-C (gcc) — praticamente igual ao C++:
-```Dockerfile
-FROM gcc:12
-WORKDIR /app
-CMD ["sh", "-c", "gcc main.c -o app && ./app"]
-```
-
-Go (execução rápida):
-```Dockerfile
-FROM golang:1.21
-WORKDIR /app
-CMD ["sh", "-c", "go run ."]
-```
-
-Observações:
-- Para produção, prefira copiar o código para a imagem (`COPY`) e construir o binário durante o `docker build`.
-- Se mudar dependências (ex.: `Cargo.toml`, `go.mod`, `requirements.txt`), recrie a imagem com `--build`.
-- Use `docker compose exec <service> sh` para depurar/interagir.
-
-Se quiser, eu posso também adicionar um `Dockerfile` que faz um build multi-stage (compilação dentro do container e imagem final enxuta) para C++.
-
-**Fluxo básico de programação**
-
-- 1) Edite e salve seus arquivos dentro da pasta `src/` no seu computador.
-- 2) Suba o container (se for a primeira vez ou se tiver mudado dependências/code que fazem parte da imagem, adicione `--build`):
 ```bash
-docker compose up --build
+# Compilar sem executar
+cargo check
+
+# Compilar com otimizações
+cargo build --release
+
+# Executar todos os testes
+cargo test
+
+# Executar testes com output
+cargo test -- --nocapture
+
+# Formatar código
+cargo fmt
+
+# Lint (verificar erros)
+cargo clippy
+
+# Expandir macros
+cargo expand
+
+# Ver estrutura de dependências
+cargo tree
+
+# Verificar vulnerabilidades
+cargo audit
 ```
-- 3) Fluxo para ver as alterações:
-  - Linguagens interpretadas (ex.: Python, Go `run`, Rust com `cargo run` em dev): salve o arquivo e o processo dentro do container normalmente recarrega/usa a nova versão automaticamente (dependendo do app). Se não, reinicie o serviço com `docker compose restart`.
-  - Linguagens compiladas (C/C++): após salvar, é necessário recompilar dentro do container. Opções:
-    - Pare e suba novamente: `docker compose down` então `docker compose up` (ou `--build` quando mudar dependências).
-    - Build/exec one-off (compilar e rodar manualmente):
-```bash
-docker compose run --rm cpp sh -c "g++ main.cpp -o app && ./app"
-```
-- 4) Parar e remover containers (limpar):
+
+## 🔧 Solução de Problemas
+
+**Container não inicia?**
 ```bash
 docker compose down
+docker compose up --build
 ```
 
-Dicas rápidas:
-- Use `docker compose exec <service> sh` para abrir um shell e depurar dentro do container.
-- Para desenvolvimento use `volumes: - ./src:/app` (bind mount). Para imagem de produção, prefira `COPY` no `Dockerfile` e build multi-stage.
-
-
-
-ATALHOS:
-
+**Ferramentas cargo falhando ao instalar?**
+Tente instalar manualmente dentro do container:
 ```bash
-
-# Docker Compose shortcuts
-alias dcu='docker compose up --build'        # sobe e builda
-alias dcud='docker compose up -d --build'    # sobe em background
-alias dcd='docker compose down'               # para e remove
-alias dcr='docker compose restart'            # reinicia serviço
-alias dcl='docker compose logs -f'            # ver logs em tempo real
-alias dcb='docker compose up -d --build'      # rebuild + start detached
-alias dce='docker compose exec'      # rebuild + start detached
-alias dcude='dcud && dce'
-
+docker compose exec rust cargo install cargo-watch
 ```
 
-Depois de colar rode:
-
+**Precisa limpar cache Rust?**
 ```bash
-
-source ~/.bashrc
-
+docker compose exec rust cargo clean
 ```
 
+## 📖 Recursos
 
-Alterado como funciona:
-
-Faça o container subir sem compilar nem executar nada, apenas ficando disponível.
-
-Dockerfile
-FROM gcc:12
-WORKDIR /app
-CMD ["bash"]
-
-
-Agora o container só abre um shell e fica aguardando comandos.
-
-```bash
-docker-compose.yml
-version: "3.8"
-services:
-  cpp:
-    build: .
-    volumes:
-      - ./src:/app
-    working_dir: /app
-    tty: true
-    stdin_open: true
-  ```
-
-  ```
-
-# Use
-docker compose up -d
-docker compose exec cpp bash
-
-#OU
-
-dcude cpp bash
-```
-
-
-e depois para executar um arquivo cpp só dizer o caminho e o nome do arquivo.
-
-assim:
-
-```bash
-b main.cpp # se estiver dentro do src.
-
-# Se estiver dentro de uma pasta aí tem que dizer a pasta e tudo mais.
-```
+- [The Rust Book](https://doc.rust-lang.org/book/)
+- [Rust By Example](https://doc.rust-lang.org/rust-by-example/)
+- [Rustlings](https://github.com/rust-lang/rustlings)
