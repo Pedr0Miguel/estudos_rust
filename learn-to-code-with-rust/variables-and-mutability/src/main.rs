@@ -1,5 +1,4 @@
-const TAX_RATE: f64 = 7.25;
-
+type Metros = i32;
 fn main() {
-    println!("The tax rate is {TAX_RATE}");
+    let altura: Metros = 1600;
 }

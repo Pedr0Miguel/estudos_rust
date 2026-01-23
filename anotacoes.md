@@ -19,6 +19,29 @@ Descrição do que é existe. Neste momento vai ser feito assim...
 
 ---
 
+## Apelidos para tipos
+
+Em rust existe um meio de dar apelidos para tipos!!
+
+Muito passa!
+
+exemplo em codigo:
+```rust
+type palavra = &str;
+type inteiro = i32;
+type float = f64;
+
+fn main(){
+    let string: palavra = "Exemplo";
+    let inteiros: inteiro = 21;
+    let numero_com_virgula: float = 21.00;
+}
+
+```
+
+parece bobo mas parece muito top isso!
+---
+
 ## Constantes e Escopos no rust
 
 Constantes assim como em outras linguagens são imutáveis não podem ser ter o seu valor alterado de maneira alguma.
