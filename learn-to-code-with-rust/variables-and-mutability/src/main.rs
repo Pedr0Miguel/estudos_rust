@@ -1,8 +1,13 @@
 fn main() {
-    let mut gym_reps = 10;
+    /*
+    Variable Shadowing é quando a variável é redeclarada e o valo que ela receber vai ser um novo
 
-    println!("I'm doing {gym_reps} in my gym");
+    Como funciona? Uma variável no rust vai receber
+    */
 
-    gym_reps = 20;
-    println!("But i'll be doing {gym_reps} in my gym now");
+    let grams_protein = "100.223";
+
+    let grams_protein = 100.223;
+
+    let grams_protein = 100;
 }
