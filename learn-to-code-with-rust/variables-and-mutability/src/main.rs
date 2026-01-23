@@ -1,13 +1,5 @@
+const TAX_RATE: f64 = 7.25;
+
 fn main() {
-    /*
-    Variable Shadowing é quando a variável é redeclarada e o valo que ela receber vai ser um novo
-
-    Como funciona? Uma variável no rust vai receber
-    */
-
-    let grams_protein = "100.223";
-
-    let grams_protein = 100.223;
-
-    let grams_protein = 100;
+    println!("The tax rate is {TAX_RATE}");
 }

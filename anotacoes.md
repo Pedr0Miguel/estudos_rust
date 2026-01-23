@@ -7,13 +7,36 @@ Este arquivo serve para fazer anotações sobre o aprendizado em rust.
 
 ## Como funciona?
 
-Funciona da seguinte forma tudo vai ser escrito de uma maneira diferente, para melhor documentar ou anotar, então fica o template:
+Funciona da seguinte forma tudo vai ser escrito de uma maneira diferente ao invés de irmos digitando de cima para baixo como acontece normalmente em arquivos de texto vamos digitar de baixo para cima.
+
+Usando o template abaixo:
 
 ---
 
 ## Título do update
 
 Descrição do que é existe. Neste momento vai ser feito assim...
+
+---
+
+## Constantes e Escopos no rust
+
+Constantes assim como em outras linguagens são imutáveis não podem ser ter o seu valor alterado de maneira alguma.
+
+Mas quais são as diferenças entre uma variavel imutável e uma constante?
+
+Uma constante pode ser usada no arquivo inteiro, independente do escopo que ela é declarada.
+
+ex:
+
+```rust
+const TAX_RATE: f64 = 7.25;
+
+fn main(){
+
+    println!("The tax rate is {TAX_RATE}");
+}
+```
 
 ---
 
