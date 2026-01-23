@@ -1,12 +1,8 @@
 fn main() {
-    let apples = 50;
-    let oranges = 14 + 5;
-    let fruit = apples + oranges;
+    let mut gym_reps = 10;
 
-    println!("This year, my garden has {apples} apples and {oranges} oranges.");
-    println!(
-        "This year, my garden has {} apples and {} oranges.",
-        apples, oranges
-    );
-    println!("Total of fruits {}.", fruit);
+    println!("I'm doing {gym_reps} in my gym");
+
+    gym_reps = 20;
+    println!("But i'll be doing {gym_reps} in my gym now");
 }
