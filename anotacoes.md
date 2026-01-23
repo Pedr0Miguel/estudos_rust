@@ -19,6 +19,57 @@ Descrição do que é existe. Neste momento vai ser feito assim...
 
 ---
 
+## Diretivas ou Instruções para o Compilador
+
+Em Rust podemos adicionar um comando ou uma instrução ao nosso compilador, no exemplo abaixo:
+
+```rust
+
+type Metros = i32;
+fn main() {
+    
+    #[allow(unused_variables)] // Basicamente aqui neste trecho dizemos para o compilador tolerar uma variável que não usamos para nada.
+    let altura: Metros = 1600;
+    let largura: Metros = 100;
+}
+
+```
+
+Isso não se aplica a apenas uma linha podemos aplicar em uma função inteira.
+
+exemplo:
+
+```rust
+
+type Metros = i32;
+
+#[allow(unused_variables)] // Basicamente aqui neste trecho dizemos para o compilador tolerar uma variável que não usamos para nada.    
+fn main() {
+    
+let altura: Metros = 1600;
+    let largura: Metros = 100;
+}
+```
+
+E por fim podemos adicionar isso para o arquivo de código INTEIRO.
+Ex:
+```rust
+#[allow(unused_variables)] // Basicamente aqui neste trecho dizemos para o compilador tolerar uma variável que não usamos para nada. Para todo o código!
+type Metros = i32;
+
+
+fn main() {
+    
+    let altura: Metros = 1600;
+    let largura: Metros = 100;
+}
+```
+
+
+
+---
+
+
 ## Apelidos para tipos
 
 Em rust existe um meio de dar apelidos para tipos!!
