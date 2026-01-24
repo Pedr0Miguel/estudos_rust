@@ -19,6 +19,78 @@ Descrição do que é existe. Neste momento vai ser feito assim...
 
 ---
 
+
+## Datatypes e seus diferenciais - Inteiros e Floats
+
+Rust tem uma variedade de tipos de dados.
+
+## Scalar types
+
+São tipos que carregam apenas um valor, sendo eles:
+
+- Integers
+- floating-points numbers
+- Booleans
+- Characters
+
+## Container types
+
+Ainda não foi mencionado no curso mas são tipos de dados que carregam mais de um tipo de dado como um "container type".
+
+### Inteiros no Rust
+
+Inteiros nos rust funciona de forma parecida com outras linguagens mas possui um diferencial, conseguimos escolher se queremos guardar numeros inteiros e negativos ou apenas numeros positivos!
+
+E isso está nessa tabela de inteiro como funciona os inteiros:
+
+![Tabela Ints](images/data-types/image.png)
+
+
+#### Facilidade na leitura de um numero inteiro
+
+Em rust para facilitar a leitura de um numero apenas adicionar um "_".
+
+Ex:
+```rust
+// Aqui temos na maneira tradicional de se ler um inteiro
+let exemplo = 1000000;
+let exemplo = 99999;
+
+// Aqui a maneira facilitada
+let exemplo = 1_000_000;
+let exemplo = 99_000;
+// O compilador vai ignorar esses "_" é como se não existisse para ele  
+
+```
+
+## Usize e Isize 
+
+Todos os tipos de dado que foram abordados até agora ocupam um certo espaço na memória.
+
+Ex: Um F64 ocupa 64 bits de memória independentemente do computador ou architetura que o código está rodando.
+
+Mas temos 2 tipos especiais em rust Usize e Isize
+
+Usize é para unsigned values (apenas numeros do zero para cima)
+Isize é para signed values (Ambos os numeros negativos e positivos)
+
+Obs: Eles não são tipos na verdade são apelidos/aliases para:
+
+- usize -> u32 ou u64
+- isize -> i32 ou i64
+
+
+Mas porque um ou outro? Pq a própria linguagem Rust identifica a arquitetura ou o computador e adapta o tipo para u32/u64 para máquinas de 32/64 bits.
+
+
+### Float no rust
+
+Temos no rust dois tipos de float mas eles mudam apenas a precisão de quantos numeros após o a virgula queremos mostrar.
+
+![Tabela Float](images/data-types/float.png)
+
+---
+
 ## Diretivas ou Instruções para o Compilador
 
 Em Rust podemos adicionar um comando ou uma instrução ao nosso compilador, no exemplo abaixo:
