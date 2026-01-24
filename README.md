@@ -2,6 +2,8 @@
 
 Um ambiente Docker completo para aprender Rust com todas as ferramentas de desenvolvimento pré-configuradas.
 
+## TESTE 1
+
 ## 📋 Estrutura
 
 Este projeto é um repositório educacional com múltiplos exemplos e exercícios Rust:
