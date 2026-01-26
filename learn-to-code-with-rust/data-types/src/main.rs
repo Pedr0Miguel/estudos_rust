@@ -1,9 +1,8 @@
 fn main() {
-    let value: i32 = -15;
+    let value = 3.1458955885;
 
-    println!("{}", value.abs());
-
-    let content: &str = "            nwdndowenfdowen                ";
-
-    println!("{}", content.trim());
+    println!("{}", value);
+    println!("{value:.2}");
+    println!("{0:.4}", value);
+    println!("{0:.4}", value);
 }

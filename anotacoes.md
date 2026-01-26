@@ -19,6 +19,32 @@ Descrição do que é existe. Neste momento vai ser feito assim...
 
 ---
 
+## Floating Point types
+
+Algumas manipulções que podemos fazer com os floats
+
+
+Rust tem o f64 que nos dá uns 15 digitos de precisão para um numero enquanto o 32 vai para apenas 6 ou 7 digitos de precisão.
+
+
+E conseguimos formatar esses valores para quantos digitos depois da virgula precisamos:
+
+
+exemplo:
+```rust
+fn main() {
+    let value = 3.1458955885;
+
+    println!("{}", value);
+    println!("{value:.2}");
+    println!("{0:.4}", value);
+    println!("{0:.4}", value);
+}
+```
+
+
+---
+
 ## Introdução a métodos
 
 Métodos são basicamente funções que ficam dentro de classes, em rust os valores que colocamos como integer também possuem métodos.
