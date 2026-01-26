@@ -20,6 +20,52 @@ Descrição do que é existe. Neste momento vai ser feito assim...
 ---
 
 
+## Datatypes e seus diferenciais - Strings e Raw Strings
+
+Algumas strings tem seu comportamento diferente.
+
+Temos string que sabemos os seu valores no tempo de compilação:
+
+```rust
+println!("HELLO");
+```
+
+### valores especiais em strings:
+
+Para dar enter é só colocar o "\n" dentro da string no Rust:
+
+```rust
+println!("HELLO \n World");
+```
+
+Para dar um tab é só colocar o "\t" dentro da string no Rust:
+
+```rust
+println!("HELLO \t World");
+```
+
+Para escapar algum caracter é só colocar um "\" dentro.
+
+### Raw string
+
+É basicamente as string que tem ' assim como em outras linguagens esse ' vai ignorar todo e qualquer caractere que seja especial.
+
+Mas em rust fica assim:
+
+```rust
+let filepath = r"Hello \n world";
+```
+
+O compilador vai interpretar isso literalmente e vai ignorar o \n.
+
+
+Essas string sabemos no tempo de compilação pois está chumbado no código mas tem strings que não o valor essas são strings que o usuário vai inserir no código quando ele estiver rodando.
+
+
+
+---
+
+
 ## Datatypes e seus diferenciais - Inteiros e Floats
 
 Rust tem uma variedade de tipos de dados.
