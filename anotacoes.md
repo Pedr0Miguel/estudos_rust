@@ -19,6 +19,29 @@ Descrição do que é existe. Neste momento vai ser feito assim...
 
 ---
 
+## Introdução a métodos
+
+Métodos são basicamente funções que ficam dentro de classes, em rust os valores que colocamos como integer também possuem métodos.
+
+Ex:
+
+```rust
+fn main() {
+    let value: i32 = -15;
+
+    println!("{}", value.abs());
+}
+```
+
+Neste exemplo o que fizemos? Adicionamos o valor -15 ao value e ao printarmos nós colocamos o .abs() isso é um método do tipo int que abs é o valor absoluto de um numero ou seja, basicamente falando a distancia que esse número tem de zero.
+
+Ao rodar o programa ele vai printar como 15.
+
+
+Bem tranquilo por enquanto.
+
+---
+
 
 ## Datatypes e seus diferenciais - Strings e Raw Strings
 
