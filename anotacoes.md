@@ -13,6 +13,55 @@ Usando o template abaixo:
 
 ---
 
+## Titulo
+
+Descricao 
+
+---
+
+## Augmented Assigment Operator
+
+Operações matemáticas mais comuns ou mais simples é assim:
+
+Uma forma de fazermos uma variável mais um em linguagens comuns é:
+
+```C++
+
+int i;
+i+=1;
+i++;
+
+```
+Uma forma mais simples que i = i + 1;
+
+Em rust temos isso também mas apenas isso:
+
+
+```rust
+let mut i = 34;
+
+i = i + 1;
+
+i += 1;
+
+println!({i});
+
+i -= 1;
+println!({i});
+
+i *= 2;
+println!({i});
+
+year /= 4;
+println!({i});
+
+
+
+```
+
+---
+
+
 ## Operações matematicas
 
 Operações matemáticas assim como em toda linguagem é os principais:
