@@ -38,6 +38,18 @@ println!("{pode_dirigir}"); // Saida true.
 
 ```
 
+### Inversão de Booleans
+
+Conseguimos alterar o valor de um boolean apenas usando o valor !
+
+Assim invertemos os seu valores:
+
+
+```rust
+println!("{}", !true); // Saida false
+println!("{}", !false); // Saida true
+```
+
 ---
 
 ## Augmented Assigment Operator
