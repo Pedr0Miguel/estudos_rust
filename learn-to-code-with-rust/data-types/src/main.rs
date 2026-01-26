@@ -1,8 +1,11 @@
 fn main() {
-    let value = 3.1458955885;
+    let miles_away = 50;
+    let miles_away_i8 = miles_away as i8;
+    let miles_away_u8 = miles_away as u8;
 
-    println!("{}", value);
-    println!("{value:.2}");
-    println!("{0:.4}", value);
-    println!("{0:.4}", value);
+    let miles_float: f64 = 100.34234;
+    let miles_f32 = miles_away as f32;
+    let miles_int = miles_away as i32;
+
+    println!("{miles_int}");
 }
