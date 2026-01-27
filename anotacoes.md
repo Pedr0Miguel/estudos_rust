@@ -19,6 +19,31 @@ Descricao
 
 ---
 
+## Array, o primeiro scalar/compound type
+
+Array é um tipo escalar ou seja podemos colocar inúmeros dados dentro dele do mesmo tipo que ele funcionara tranquilamente.
+
+exemplo em codigo:
+
+```rust
+fn main() {
+    let numbers: [i32; 6] = [1, 2, 3, 4, 5, 6];
+    let marcas: [&str; 3] = ["apple", "Samsung", "Motorola"];
+
+    println!("{}", marcas.len());
+
+    for number in numbers {
+        println!("{}", number);
+    }
+}
+```
+
+
+Arrays tbm possuem métodos próprios.
+
+
+---
+
 
 ## Caracteres
 

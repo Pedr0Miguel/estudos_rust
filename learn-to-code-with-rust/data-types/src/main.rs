@@ -1,14 +1,10 @@
 fn main() {
-    let first_initial = 'b';
-    let emoji = '🙂';
+    let numbers: [i32; 6] = [1, 2, 3, 4, 5, 6];
+    let marcas: [&str; 3] = ["apple", "Samsung", "Motorola"];
 
-    println!(
-        "{}, {}",
-        first_initial.is_alphabetic(),
-        emoji.is_alphabetic()
-    );
+    println!("{}", marcas.len());
 
-    println!("{}, {}", first_initial.is_uppercase(), emoji.is_lowercase());
-
-    println!("{}, {}", first_initial.is_uppercase(), emoji.is_lowercase());
+    for number in numbers {
+        println!("{}", number);
+    }
 }
