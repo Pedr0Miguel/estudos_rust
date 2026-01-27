@@ -19,6 +19,40 @@ Descricao
 
 ---
 
+
+## Caracteres
+
+O tipo caractere em rust  é  representado de maneira simples:
+
+```rust
+let exe = 'v';
+```
+
+Só pode ser usado uma letra para este tipo.
+
+
+alguns métodos de uso:
+
+```rust
+fn main() {
+    let first_initial = 'b';
+    let emoji = '🙂';
+
+    println!(
+        "{}, {}",
+        first_initial.is_alphabetic(),
+        emoji.is_alphabetic()
+    );
+
+    println!("{}, {}", first_initial.is_uppercase(), emoji.is_lowercase());
+
+    println!("{}, {}", first_initial.is_uppercase(), emoji.is_lowercase());
+}
+
+```
+
+---
+
 ## Igual ou diferente, && e ||
 
 Operadores que dizem se algo é igual ou diferente de alguma coisa.

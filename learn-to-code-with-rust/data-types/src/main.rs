@@ -1,7 +1,14 @@
 fn main() {
-    let vip = false;
-    let admin = false;
-    let pode_entrar = vip || admin;
+    let first_initial = 'b';
+    let emoji = '🙂';
 
-    println!("O usuário pode entrar? {}", pode_entrar)
+    println!(
+        "{}, {}",
+        first_initial.is_alphabetic(),
+        emoji.is_alphabetic()
+    );
+
+    println!("{}, {}", first_initial.is_uppercase(), emoji.is_lowercase());
+
+    println!("{}, {}", first_initial.is_uppercase(), emoji.is_lowercase());
 }
