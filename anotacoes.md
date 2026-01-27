@@ -19,6 +19,27 @@ Descricao
 
 ---
 
+## Igual ou diferente, && e ||
+
+Operadores que dizem se algo é igual ou diferente de alguma coisa.
+
+exemplo:
+
+```rust
+fn main() {
+    println!("{}", "coke" == "pepsi"); // falsse
+    println!("{}", "coke" != "coke"); // falsse
+    println!("{}", "coke" == "coke"); // true
+}
+
+
+```
+
+Aqueles simbolos de AND (&&) e de OR (||) 
+
+
+---
+
 ## Booleans
 
 Valores booleanos em Rust

@@ -1,12 +1,7 @@
 fn main() {
-    let bonito: bool = true;
-    let bobo: bool = false;
+    let vip = false;
+    let admin = false;
+    let pode_entrar = vip || admin;
 
-    println!("{bonito}"); // Saida true
-    println!("{bobo}"); // Saida false
-
-    let idade = 17;
-    let pode_dirigir = idade > 18;
-
-    println!("{pode_dirigir}"); // Saida false.
+    println!("O usuário pode entrar? {}", pode_entrar)
 }
