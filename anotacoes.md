@@ -19,6 +19,109 @@ Descricao
 
 ---
 
+
+## Debug Trait
+
+Diferente da display trait o debug serve para nós programadores usarmos.
+
+Ele é comumente usado nos arrays para melhorar a visão do que ele possue dentro dele.
+
+Tem as formas de como fazer isso em código:
+
+```rust
+fn main() {
+    let numbers: [i32; 6] = [1, 2, 3, 4, 5, 6];
+    let marcas: [&str; 3] = ["apple", "Samsung", "Motorola"];
+
+    println!("{}", marcas.len());
+
+    println!("{:?}", marcas);
+    // OU
+    println!("{marcas:?}");
+
+    // Tem como deixar de forma bonita:
+
+    println!("{marcas:#?}");
+
+}
+
+```
+
+---
+
+## The Display Traits
+
+Uma trait em Rust é como um contrato.
+
+Ela define quais métodos um tipo deve ter para dizer:
+    “Eu sei fazer isso”
+
+Se um tipo implementa uma trait, ele promete que possui aqueles métodos.
+
+👉 O como o método funciona pode mudar
+👉 Mas o nome e a assinatura do método são os mesmos
+
+🧾 Analogia simples
+
+Trait = contrato
+Tipo = pessoa/objeto que assina o contrato
+
+Exemplo do mundo real:
+
+“Você promete chegar às 9h”
+
+Estudante → chega na aula
+
+Funcionário → chega no trabalho
+
+Avião → chega no aeroporto
+
+Todos cumprem o mesmo contrato, mas de formas diferentes.
+
+
+trait Display
+
+A trait Display diz:
+
+“Este tipo pode ser mostrado como texto legível para humanos”
+
+Ela é usada quando você faz:
+
+```rust
+println!("Valor: {}", valor);
+```
+
+O {} só funciona se o tipo implementar Display.
+
+✅ Tipos que implementam Display
+
+- i32
+
+- f64
+
+- bool
+
+- String
+
+- &str
+
+Exemplo:
+
+```rust
+fn main() {
+    let idade = 25;
+    let altura = 1.75;
+    let ativo = true;
+
+    println!("Idade: {}", idade);
+    println!("Altura: {}", altura);
+    println!("Ativo: {}", ativo);
+}
+
+```
+
+---
+
 ## Array, o primeiro scalar/compound type
 
 Array é um tipo escalar ou seja podemos colocar inúmeros dados dentro dele do mesmo tipo que ele funcionara tranquilamente.

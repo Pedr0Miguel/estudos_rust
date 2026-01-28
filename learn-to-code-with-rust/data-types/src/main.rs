@@ -4,7 +4,8 @@ fn main() {
 
     println!("{}", marcas.len());
 
-    for number in numbers {
-        println!("{}", number);
-    }
+    println!("{:?}", marcas);
+    // OU
+    println!("{numbers:?}");
+    println!("{numbers:#?}");
 }
