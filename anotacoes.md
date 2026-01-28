@@ -19,6 +19,44 @@ Descricao
 
 ---
 
+
+## Range type
+
+Um range representa uma sequencia ou intervalo de valores consecutivos.
+
+Por exemplo um range pode pegar todos os números entre 15 e 21, ou isso pode listar todos os caracteres entre "b" e "h"
+
+
+exemplo:
+
+```rust
+
+fn main() {
+    let month_days = 1..26;
+
+    println!("{month_days:?}");
+
+    let month_days = 1..=26;
+    println!("{month_days:?}");
+
+    for day in month_days {
+        println!("{day}");
+    }
+
+    let letras = 'b'..'p';
+
+    for letra in letras {
+        println!("{letra}");
+    }
+}
+
+
+```
+
+E aqui aprendemos a primeira forma de iterar as coisas em Rust.
+
+---
+
 ## Tuple Type
 
 Introdução ao tipo Tuples é mais um tipo de collection como array, diferente do array que necessita que todos os dados dentro dele sejam do mesmo tipo, uma tupla não tem essa limitação então pode ser inserido dentro dela dados de diferentes tipos.

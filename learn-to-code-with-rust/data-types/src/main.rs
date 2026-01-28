@@ -1,13 +1,18 @@
 fn main() {
-    let empregado = ("MOLLY", 32, "Marketing");
+    let month_days = 1..26;
 
-    let (nome, idade, setor) = empregado;
+    println!("{month_days:?}");
 
-    // let nome = empregado.0;
-    // let idade = empregado.1;
-    // let setor = empregado.2;
+    let month_days = 1..=26;
+    println!("{month_days:?}");
 
-    println!("{} tem {} e trabalha no {}", nome, idade, setor);
+    for day in month_days {
+        println!("{day}");
+    }
 
-    dbg!(empregado);
+    let letras = 'b'..'p';
+
+    for letra in letras {
+        println!("{letra}");
+    }
 }
