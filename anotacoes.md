@@ -19,6 +19,34 @@ Descricao
 
 ---
 
+## Tuple Type
+
+Introdução ao tipo Tuples é mais um tipo de collection como array, diferente do array que necessita que todos os dados dentro dele sejam do mesmo tipo, uma tupla não tem essa limitação então pode ser inserido dentro dela dados de diferentes tipos.
+
+
+
+exemplo:
+
+```rust
+fn main() {
+    let empregado = ("MOLLY", 32, "Marketing");
+
+    // Forma mais simples para associar os dados de uma tupla para variaveis
+
+    let (nome, idade, setor) = empregado;
+
+    // let nome = empregado.0;
+    // let idade = empregado.1;
+    // let setor = empregado.2;
+
+    println!("{} tem {} e trabalha no {}", nome, idade, setor);
+
+    dbg!(empregado);
+}
+```
+
+---
+
 
 
 ## Macro em Rust.

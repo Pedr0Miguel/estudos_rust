@@ -1,14 +1,13 @@
 fn main() {
-    let numbers: [i32; 6] = [1, 2, 3, 4, 5, 6];
-    let marcas: [&str; 3] = ["apple", "Samsung", "Motorola"];
+    let empregado = ("MOLLY", 32, "Marketing");
 
-    println!("{}", marcas.len());
+    let (nome, idade, setor) = empregado;
 
-    println!("{:?}", marcas);
-    // OU
-    println!("{numbers:?}");
-    println!("{numbers:#?}");
+    // let nome = empregado.0;
+    // let idade = empregado.1;
+    // let setor = empregado.2;
 
-    dbg!(2 + 2);
-    dbg!(numbers);
+    println!("{} tem {} e trabalha no {}", nome, idade, setor);
+
+    dbg!(empregado);
 }
