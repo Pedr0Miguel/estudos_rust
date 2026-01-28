@@ -1,5 +1,5 @@
 fn main() {
-    let month_days = 1..26;
+    let month_days: std::ops::Range<i32> = 1..26;
 
     println!("{month_days:?}");
 
@@ -10,7 +10,7 @@ fn main() {
         println!("{day}");
     }
 
-    let letras = 'b'..'p';
+    let letras: std::ops::Range<char> = 'b'..'p';
 
     for letra in letras {
         println!("{letra}");
