@@ -8,4 +8,7 @@ fn main() {
     // OU
     println!("{numbers:?}");
     println!("{numbers:#?}");
+
+    dbg!(2 + 2);
+    dbg!(numbers);
 }

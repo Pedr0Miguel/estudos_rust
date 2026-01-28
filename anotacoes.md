@@ -20,6 +20,74 @@ Descricao
 ---
 
 
+
+## Macro em Rust.
+
+O que são os Macros?
+
+Macro em Rust é código que escreve código.
+
+Por que Rust tem macros?
+
+Rust é bem rigoroso com tipos e não tem coisas como:
+
+- funções variádicas (printf(...))
+
+- reflexão em runtime
+
+As macros resolvem isso:
+
+- evitam repetição de código
+
+- geram código eficiente
+
+- permitem sintaxe mais flexível que funções normais
+
+
+Macro
+
+```rust
+println!("Olá {}", nome);
+```
+
+- Executa em tempo de compilação
+
+- Recebe tokens de código, não valores
+
+- Expande para código Rust válido
+
+---
+
+
+## dbg! Macro
+
+O dbg! é semelhante ao println! ele funciona como uma função mas não é uma função é uma maneira auxiliar.
+
+Mesmo existindo o debug trait ele é como se fosse um acessório, se quiser realmente algo pra poder debuggar é o dbg! que temos que utilizar.
+
+```rust
+fn main() {
+    let numbers: [i32; 6] = [1, 2, 3, 4, 5, 6];
+    let marcas: [&str; 3] = ["apple", "Samsung", "Motorola"];
+
+    println!("{}", marcas.len());
+
+    println!("{:?}", marcas);
+    // OU
+    println!("{numbers:?}");
+    println!("{numbers:#?}");
+
+    dbg!(2 + 2);
+    dbg!(numbers);
+}
+
+```
+
+Ele é mais fácil de utilzar do que puxar o println! e tudo mais.
+
+---
+
+
 ## Debug Trait
 
 Diferente da display trait o debug serve para nós programadores usarmos.
