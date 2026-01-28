@@ -19,6 +19,43 @@ Descricao
 
 ---
 
+## Funções
+
+As funções se mantém a mesma coisa das outras linguagens só tem alguns diferenciais:
+
+
+```rust
+
+fn teste(variavel: i32)-> i32 // Isso aqui quer dizer que vai retornar um inteiro de 32 bits
+
+fn teste(variavel: i32)-> i32{
+    variavel * 2
+}
+
+// Se colocar dessa maneira o rust vai entender que vai ter que retornar sem precisa
+// necessáriamente colocar o return explicitamente.
+
+// E tem como fazer uma função dentro de uma variável assim:
+
+let multiplicador = 3;
+
+let calculadora ={
+    let value = 5 +4;
+
+    value * multiplicador
+};
+
+
+
+
+/// valor de calculadora vai ser 27
+
+```
+
+Aí de resto se mantem tudo igual.
+
+---
+
 
 ## Range type
 
