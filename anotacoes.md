@@ -19,6 +19,33 @@ Descricao
 
 ---
 
+## Loop
+
+O rust tem sua forma de iterar as coisas e de como funciona os loops.
+
+Aqui está o loop tradicional em rust:
+
+```rust
+loop {
+    // Bloco de código que queira repetir
+}
+```
+
+Para parar o loop usamos a palavra chave: 
+
+```rust
+break;
+```
+
+e se quiser fazer um bloco de código que faça alguma modificação e recomece o loop utilize o:
+
+```rust
+continue;
+```
+
+
+---
+
 ## Funções
 
 As funções se mantém a mesma coisa das outras linguagens só tem alguns diferenciais:
