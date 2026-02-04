@@ -29,6 +29,16 @@ Essas etapas que queremos parar o código se chamam breakpoints
 
 Como demonstrado na aula 93 podemos percorrer o código trecho por trecho vendo todo o código em sua execução.
 
+Neste trecho vai ser dito um pouco mais afundo no debug.
+
+Quando entramos em debug mode temos algumas abas como VARIABLES que mostra as nossas variáveis né.
+
+E temos a aba de "watch", essa aba é chamada assim pois ela observa os valores referenciados e então faz calculos quando esses valores mudam. Isso vai recomputar alguns dados baseado nos dados que existem no programa.
+
+Basicamente no watch é possível colocar alguns trechos de códigos, como um if/else, <variável> * 2, etc.
+
+Mas pode ocorrer alguns bugs pois coisas muito complexas podem não rodar ou ter um comportamento inesperado.
+
 ---
 
 ## Recursão em Rust
