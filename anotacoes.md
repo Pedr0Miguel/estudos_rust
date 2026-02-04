@@ -19,6 +19,12 @@ Descricao
 
 ---
 
+## Recursão em Rust
+
+Uma das principais funcionalidades da programação é a recursão, basicamente quando uma função chama ela mesma, é uma forma de loop bem sofisticada e complexa.
+
+---
+
 ## Loop
 
 O rust tem sua forma de iterar as coisas e de como funciona os loops.

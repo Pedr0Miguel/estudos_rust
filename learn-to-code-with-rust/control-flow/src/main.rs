@@ -1,17 +1,14 @@
-fn main() {
-    let mut i = 21;
-
-    while i > 0 {
-        if i % 2 == 0 {
-            println!("{i} é par, adicionando mais 3");
-            i -= 3;
-            continue;
-        }
-
-        println!("{i} ola mundo!");
-
-        i -= 1;
+fn countdown(seconds: i32) {
+    if seconds == 0 {
+        println!("Acabou.");
+        return;
     }
 
-    println!("Tchau mundo");
+    println!("{seconds} para acabar...");
+
+    countdown(seconds - 1);
+}
+
+fn main() {
+    countdown(5);
 }
