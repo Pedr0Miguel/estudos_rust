@@ -19,6 +19,18 @@ Descricao
 
 ---
 
+## Debugging
+
+Usando o vs code e sua funcionalidade de debugg, podemos executar nosso código uma linha por vez.
+
+Ao invés de rodar o código todo de uma vez, podemos designiar algumas linhas que queremos que o código pare e analizar o comportamento do código.
+
+Essas etapas que queremos parar o código se chamam breakpoints
+
+Como demonstrado na aula 93 podemos percorrer o código trecho por trecho vendo todo o código em sua execução.
+
+---
+
 ## Recursão em Rust
 
 Uma das principais funcionalidades da programação é a recursão, basicamente quando uma função chama ela mesma, é uma forma de loop bem sofisticada e complexa.

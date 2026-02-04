@@ -11,7 +11,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "rust-lang.rust-analyzer"
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        "k--kato.intellij-idea-keybindings"
       ],
       "settings": {
         "rust-analyzer.checkOnSave.enable": true,
@@ -42,7 +44,7 @@
           "learn-to-code-with-rust/vectors/Cargo.toml",
           "learn-to-code-with-rust/warehouse/Cargo.toml"
         ],
-        "editor.formatOnSave": true,
+        "editor.formatOnSave": false,
         "[rust]": {
           "editor.defaultFormatter": "rust-lang.rust-analyzer"
         }
