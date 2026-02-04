@@ -29,6 +29,8 @@ Essas etapas que queremos parar o código se chamam breakpoints
 
 Como demonstrado na aula 93 podemos percorrer o código trecho por trecho vendo todo o código em sua execução.
 
+### Debug II
+
 Neste trecho vai ser dito um pouco mais afundo no debug.
 
 Quando entramos em debug mode temos algumas abas como VARIABLES que mostra as nossas variáveis né.
@@ -39,6 +41,18 @@ Basicamente no watch é possível colocar alguns trechos de códigos, como um if
 
 Mas pode ocorrer alguns bugs pois coisas muito complexas podem não rodar ou ter um comportamento inesperado.
 
+### Debug III
+
+Nesta parte é para detalharmos o que os outros botões do debug mode fazem.
+
+Alguns botões podem ter o comportamento parecido com o continue button como pular de função em função ou de linha por linha
+
+
+Nós temos o step over que é o que pula de função em função basicamente falando. Ele para onde vc quer e se vc apertar nele pulamos para a próxima função, sem questionarmos o que roda dentro da função que pulamos.
+
+Temos o step into ele faz o contrário do último ele entre dentro do código da função e podemos ver como está funcionando o código, se você continuar usando o step into ele vai seguir linha por linha o que o código está fazendo.
+
+Se estiver dentro de uma função e quiser se retirar dela pois já foi debuggado o que precisava é só apertar em step out, assim o que faltava ser executado na função era executado e seguimos caminho com o debugg.
 ---
 
 ## Recursão em Rust

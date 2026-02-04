@@ -11,4 +11,8 @@ fn countdown(seconds: i32) {
 
 fn main() {
     countdown(5);
+
+    countdown(5);
+
+    countdown(5);
 }
