@@ -1,18 +1,47 @@
-fn countdown(seconds: i32) {
-    if seconds == 0 {
-        println!("Acabou.");
-        return;
+fn color_to_number(color: &str) -> i32 {
+    if color == "red" {
+        return 1;
+    } else if color == "green" {
+        return 2;
+    } else if color == "blue" {
+        return 3;
+    } else {
+        return 0;
+    }
+}
+
+fn color_to_number_match(color: &str) -> i32 {
+    return match color {
+        "red" => 1,
+        "green" => 2,
+        "blue" => 3,
+        _ => 0,
+    };
+}
+
+fn factorial(mut number: i32) -> i32 {
+    let mut multiplicador: i32 = number - 1;
+    loop {
+        if multiplicador == 0 {
+            return number;
+        }
+
+        number *= multiplicador;
+        multiplicador -= 1;
+    }
+}
+fn factorial_recursive(number: i32) -> i32 {
+    if number == 1 {
+        return number;
     }
 
-    println!("{seconds} para acabar...");
-
-    countdown(seconds - 1);
+    number * factorial_recursive(number - 1)
 }
 
 fn main() {
-    countdown(5);
+    println!("{}", color_to_number("red"));
+    println!("{}", color_to_number_match("yellow"));
 
-    countdown(5);
-
-    countdown(5);
+    println!("{}", factorial(5));
+    println!("{}", factorial_recursive(4));
 }

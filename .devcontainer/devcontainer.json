@@ -17,33 +17,6 @@
       ],
       "settings": {
         "rust-analyzer.checkOnSave.enable": true,
-        "rust-analyzer.linkedProjects": [
-          "learn-to-code-with-rust/variables-and-mutability/Cargo.toml",
-          "learn-to-code-with-rust/functions/Cargo.toml",
-          "learn-to-code-with-rust/closures/Cargo.toml",
-          "learn-to-code-with-rust/control-flow/Cargo.toml",
-          "learn-to-code-with-rust/data-types/Cargo.toml",
-          "learn-to-code-with-rust/datetimes/Cargo.toml",
-          "learn-to-code-with-rust/enums/Cargo.toml",
-          "learn-to-code-with-rust/error-handling/Cargo.toml",
-          "learn-to-code-with-rust/generics/Cargo.toml",
-          "learn-to-code-with-rust/hash-maps/Cargo.toml",
-          "learn-to-code-with-rust/iterators/Cargo.toml",
-          "learn-to-code-with-rust/lifetimes/Cargo.toml",
-          "learn-to-code-with-rust/option-and-result-enums/Cargo.toml",
-          "learn-to-code-with-rust/ownership/Cargo.toml",
-          "learn-to-code-with-rust/random/Cargo.toml",
-          "learn-to-code-with-rust/regular-expressions/Cargo.toml",
-          "learn-to-code-with-rust/saladworks/Cargo.toml",
-          "learn-to-code-with-rust/slices/Cargo.toml",
-          "learn-to-code-with-rust/smart-pointers-box/Cargo.toml",
-          "learn-to-code-with-rust/strings/Cargo.toml",
-          "learn-to-code-with-rust/structs/Cargo.toml",
-          "learn-to-code-with-rust/testing/Cargo.toml",
-          "learn-to-code-with-rust/traits/Cargo.toml",
-          "learn-to-code-with-rust/vectors/Cargo.toml",
-          "learn-to-code-with-rust/warehouse/Cargo.toml"
-        ],
         "editor.formatOnSave": false,
         "[rust]": {
           "editor.defaultFormatter": "rust-lang.rust-analyzer"
