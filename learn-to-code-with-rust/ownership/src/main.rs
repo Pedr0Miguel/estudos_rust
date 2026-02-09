@@ -1,12 +1,7 @@
 fn main() {
-    let mut name = String::from("Pedro");
-    println!("NOME: {name}");
+    let person: String = String::from("Pedro");
+    print!("{person}");
 
-    name.push_str(" Miguel");
+    let genius: String = person;
 
-    println!("NOME ALTERADO: {name}");
-
-    name.push_str(" Plaça Lima");
-
-    println!("NOME ALTERADO: {name}");
 }

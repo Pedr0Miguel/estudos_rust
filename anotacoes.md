@@ -19,6 +19,48 @@ Descricao
 
 ---
 
+## Moves and Ownership
+
+Quando temos um tipo que não possue o trait copy o rust faz oq? Ele move a responsabilidade de uma variável para outra.
+
+Exemplo:
+```rust
+fn main() {
+    let person: String = String::from("Pedro");
+    let genius: String = person;
+}
+```
+
+Quando passamos a variável person para a variável genius não só passamos o valor mas movemos a responsabilidade que ela vai ter que limpar a memória heap.
+
+```rust
+fn main() {
+    let person: String = String::from("Pedro");
+    let genius: String = person;
+
+    print!("{person}");
+}
+```
+
+Ao fazer isso no código ele vai dar erro pois person não possui mais o valor e nem tem mais responsabilidade sobre o que ele possuia e ocorrendo um erro ao compilar o código.
+
+
+Mas e se mesmo assim quisessemos chamar person? Aí teríamos que fazer o seguinte:
+
+```rust
+fn main() {
+    let person: String = String::from("Pedro");
+
+    print!("{person}");
+
+    let genius: String = person;
+
+}
+```
+Assim o código fica válido pois a variável person só perde a responsabilidade do que ela tem quando passamos para genius, podemos manipular person o quanto quisermos desde que seja antes de passarmos para a outra variável.
+
+---
+
 ## The push_str Method on a String type
 
 Como podemos concatenar uma string que foi adicionada na Heap? Simples usamos o método push_str para nos fazer esse favor.
