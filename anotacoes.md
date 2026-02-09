@@ -19,6 +19,54 @@ Descricao
 
 ---
 
+## Ownership
+
+Descricao 
+
+---
+
+## Ownership: Introdução
+
+Uma feature única da linguagem, Ownership é um conjunto de regras que o compilador checka para ter certeza que o programa final não possui erros de memória.
+
+Para entender isso precisamos ver como erros como esses podem surgir quando estamos trabalhando com memória.
+
+### Memória
+
+Memória como você já sabe é uma parte do seu hardware que é responsável por armazenar a informação que o seu programa usa.
+
+Muitos programas que abrimos como o Vs code faz uma alocação de memória na memória ram de informações que são importantes para esse programa e toda hora solicita pela memória alocada, outros programas também desalocam memórias que estão armazenadas para maior performance pois nossa memória ram é bem limitada.
+
+### Como funcionava o manejo de memória manual
+
+Em linguagens como C e C++, o programador é o responsável para alocar memória e desalocar memória.
+
+Um dos erros que podem ocorrer por deixar o programador decidir no C/C++ é que o programador pode cometer o erro de esquecer de desalocar a memória o que pode ocorrer de o sistema sempre ficar requisitando memória mas nunca a devolvendo... Outro erro pode ser o de desalocar a memória que já estava desalocada.
+
+### Garbage collector
+
+Outra maneira que encontraram de fazer esse manejo de forma simples é o uso de garbage colector como o Java faz, mas pode desalecerar o programa pois o sistema teria que parar para fazer essa limpeza.
+
+Basicamente esse sistema de garbage analiza a memória que não está mais em uso e limpa ela, o problema com isso é que o garbage colector por sí só já usa memória e pode rodar em alguma hora delicada de deixar o programa lento.
+
+### Solução do Rust no gerenciamento de memória
+
+Rust introduz o paradigma de: Ownership
+
+Indo mais a fundo no que Rust oferece:
+
+O Owner é quem ou o que é responsável por limpar a parte da memória que não está mais em uso.
+
+Todo valor em Rust possui um Owner.
+
+O Owner pode mudar enquanto o programa roda mas é um owner por valor por vez.
+
+Mas o que pode ser um Owner? Uma variável e um parâmetro podem ser Owners.
+
+Ownership se extende também para tipos como tupla ou array, eles são considerados os donos daquele conjunto de valores.
+
+---
+
 ## Debugging
 
 Usando o vs code e sua funcionalidade de debugg, podemos executar nosso código uma linha por vez.
