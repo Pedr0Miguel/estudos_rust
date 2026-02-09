@@ -19,6 +19,37 @@ Descricao
 
 ---
 
+
+## Scope e Ownership
+
+o Owner é quem é responsável por limpar os dados de dentro de uma variável.
+
+E como o Owner sabe que precisa lempar os dados dentro da variável?
+|O Owner sabe que precisa limpar os dados quando a variável fica fora de escopo.
+
+Que é quando o bloco de código termina {}
+
+Exemplo em código:
+
+```rust
+fn main() {
+    let idade = 32; // idade é dona do dado 32
+
+    {
+        let handsome = true; // Esta variável só existe neste trecho de código
+        // Essa variável só vai existir aqui dentro
+    } // Aqui ela fica fora de escopo então simplesmente é limpa da memória
+
+    // idade existe aqui.
+}
+/*
+idade à partir daqui está fora de escopo, sendo assim,
+ela é responsável por retirar os dados da memória.
+*/
+```
+
+---
+
 ## Ownership: Stack e Heap
 
 Apesar de já sabermos vamos relembrar:
