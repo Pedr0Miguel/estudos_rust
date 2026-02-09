@@ -19,6 +19,12 @@ Descricao
 
 ---
 
+## The push_str Method on a String type
+
+Como podemos concatenar uma string que foi adicionada na Heap? Simples usamos o método push_str para nos fazer esse favor.
+
+---
+
 ## The String type
 
 Um datatype que é alocado na memória heap é a String.

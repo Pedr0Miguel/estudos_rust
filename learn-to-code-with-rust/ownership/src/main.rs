@@ -1,4 +1,12 @@
 fn main() {
-    let text: String = String::new();
-    let candy: String = String::from("Kill");
+    let mut name = String::from("Pedro");
+    println!("NOME: {name}");
+
+    name.push_str(" Miguel");
+
+    println!("NOME ALTERADO: {name}");
+
+    name.push_str(" Plaça Lima");
+
+    println!("NOME ALTERADO: {name}");
 }
