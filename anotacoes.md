@@ -19,6 +19,43 @@ Descricao
 
 ---
 
+## The String type
+
+Um datatype que é alocado na memória heap é a String.
+
+Bem, rust tem dois tipos de String um já vimos anteriormente que era o **str**, neste tipo ele não é armazenado nem dentro da Stack ou na Heap ele é anexado ao compilador isso acontece pois o valor de str já é dito no tempo de compilação.
+
+```rust
+fn main() {
+    let comida = "massa";
+}
+```
+
+O tipo de string que estamos falando é o ***String***.
+
+Mas pq o Rust precisa dessa diferenciação como dito antes str é bom quando já sabemos o valor que ele tem mas o String é para receber o valor enquanto o programa roda, como se fossemos inserir nome, endereço, CPF, etc.
+
+No meio tradicional adicionamos a string assim:
+
+```rust
+fn main() {
+    let text: String = String::new();
+}
+```
+
+Ou podemos fazer dessa forma:
+
+```rust
+fn main() {
+    let text: String = String::new();
+    let candy: String = String::from("Kill");
+}
+```
+
+
+
+---
+
 ## The Copy trait
 
 Vamos aprender sobre a copy trait.
