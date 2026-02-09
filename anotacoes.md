@@ -19,9 +19,63 @@ Descricao
 
 ---
 
-## Ownership
+## Ownership: Stack e Heap
 
-Descricao 
+Apesar de já sabermos vamos relembrar:
+
+Stack e Heap são duas regiões diferentes da memória do computador.
+
+Ambos escrevem e lêem dados de maneiras deiferentes o que nos da vantagens e desvantagens.
+
+### Stack
+
+Stack é geralmente rápida, mas ela só suporta um conjunto de dados fixos e de tamanho previsível e esse tamanho já tem que ser informado no tempo de compilação.
+
+A Stack possui uma estrutura que armazena os valores em uma ordem sequencial que recebem os valores e já os remove. Como uma pilha de coisas.
+
+Um exemplo:
+
+bom seria uma pilha de pratos de comida o último a ser colocado é o primeiro a ser retirado.
+
+### Stack II
+
+Todo dado da stack é fixo, tem um tamanho consistente e já é conhecido na hora de compilar o programa.
+
+Um exemplo é o tipo i32 ele sempre será um i32 e o compilador já sabe isso quando vai compilar o programa.
+
+
+Quando um programa em Rust precisa de um tamanho dinâmico, ele requisita isso para a memória heap. O programa chama o alocador de memória que encontra o local certo que tenha tamanho suficiente para armazenar o valor.
+
+
+
+### Heap
+
+Geralmente sendo mais devagar que a memória de Stack, mas ela suporta dados dinâmicos que podem mudar de tamanho com o uso do programa.
+
+A Heap é um grande armazenamento como se fosse um armazém de algum supermercado.
+
+A heap só é requisitada pelo rust quando precisa armazenar algo quando é algo que não sabemos o tamanho, algo como o endereço de alguém ou quando pedimos o anexo de um arquivo, nós não sabemos o tamanho deles então podem ter um tamanho grande demais, então não armazenamos isso na Stack armazenamos isso na Heap.
+
+Como isso funciona? Veremos no tópico seguinte:
+
+### Memory Allocator
+
+Um programa chamado **Memory Allocator** e esse programa procura por um espaço dentro da memória heap grande o suficiente para armazenarmos esse dado.
+
+O MA depois de armazenar retorna um endereço/referência, que é o id da memória que foi armazenado o dado.
+
+Esse endereço/referência pode ser chamado de ponteiro pois isso aponta para onde a memória está armazenada.
+
+### Heap II
+
+A heap é lenta em leitura de dados e também em alocação de dados pois comparada com a stack a stack já sabemos o tamnho local e tudo mais.
+
+Na Heap precisamos procurar o tamanho ideal e depois o endereço para procurar.
+
+
+### Conclusão
+
+Está seção do curso é focada no conceito de ownership e o propósito de ownership é de responsabilizar a desalocação de memória, particularmente a heap.
 
 ---
 
