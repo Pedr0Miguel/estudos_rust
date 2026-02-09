@@ -19,6 +19,30 @@ Descricao
 
 ---
 
+## The Copy trait
+
+Vamos aprender sobre a copy trait.
+
+O Copy trait mostra que podemos clonar um tipo.
+
+Os tipos primitivos do Rust como Boolean, Ints, Floats e mais, possuem o Copy trait e isso significa vão ser criadas cópias dos valores desses tipos automaticamente em algumas situações que eles precisem ser duplicados.
+
+Um exemplo em código de como podemos ativar essa duplicação automatica.
+
+```rust
+fn main() {
+    let time = 2025;
+    let year = time; // Aplica o Copy trait e faz uma duplicação do valor dentro de time
+
+    println!("tempo é {time} e ano é {year}");
+}
+
+```
+
+Neste simples exemplo que pode se aplicar a mesma coisa para a maioria dos tipos, mas isso se torna diferente quando estamos lidando com heap.
+
+---
+
 
 ## Scope e Ownership
 
@@ -47,6 +71,8 @@ idade à partir daqui está fora de escopo, sendo assim,
 ela é responsável por retirar os dados da memória.
 */
 ```
+
+Isso é um exemplo que se aplica na Stack mais a frente no curso veremos como funciona dentro da Heap.
 
 ---
 
