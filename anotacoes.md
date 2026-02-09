@@ -19,6 +19,18 @@ Descricao
 
 ---
 
+
+## The Drop Function
+
+Esta função é para desalocar os valores associados a uma variável,
+Rust já chama essa função para tudo quando as variáveis ficam fora de escopo.
+
+Essa drop function não funciona com variáveis que estão alocadas na Stack memory só na Heap.
+
+
+
+---
+
 ## Moves and Ownership
 
 Quando temos um tipo que não possue o trait copy o rust faz oq? Ele move a responsabilidade de uma variável para outra.
