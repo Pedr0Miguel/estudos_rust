@@ -1,7 +1,6 @@
 fn main() {
     let person: String = String::from("Pedro");
+    let genius = person.clone();
 
-    drop(person);
-
-    let genius= person;
+    println!("{person}");
 }

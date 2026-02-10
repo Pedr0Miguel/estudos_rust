@@ -19,6 +19,31 @@ Descricao
 
 ---
 
+## Clone function
+
+O modelo de Ownership em Rust existe para previnir problemas comuns que são presentes em outras linguagens de programação.
+
+Um benefício que temos do modelo de Ownership é que ele requisita ao programador pra explícitamente dizer que vai fazer uma cópia de um valor na memória Heap.
+
+Rust sempre vai evitar fazer cópias de valores na memória Heap pois ele quer ser rápido, ele quer usar a menor quantidade de memória possível, então temos que manualmente dizer que a gente precisa duplicar este dado.
+
+Está função ***clone()*** é um requisito do trait ***Clone***, quando o implementamos em um tipo este tipo "diz" como ele deveria ser clonado/duplicado.
+
+```rust
+fn main() {
+    let person: String = String::from("Pedro");
+    let genius = person.clone();
+
+    println!("{person}");
+}
+```
+
+Neste caso o código está válido, pois como usamos o método clone, não foi usado o ***move*** mas ainda tem um custo, nós duplicamos os dois textos Pedro na Heap um sendo o person que está responsável por limpar o Pedro da memória heap.
+
+Tentamos sempre evitar isso, só utilizamos se for realmente necessário.
+
+---
+
 
 ## The Drop Function
 
