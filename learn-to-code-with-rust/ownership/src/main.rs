@@ -1,6 +1,8 @@
 fn main() {
-    let person: String = String::from("Pedro");
-    let genius = person.clone();
+    let my_value = 2;
+    let my_address: &i32 = &my_value;
 
-    println!("{person}");
+    let heap_value = String::from("Toyota");
+    let heap_address = &heap_value;
+
 }

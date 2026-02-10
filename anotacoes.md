@@ -19,6 +19,181 @@ Descricao
 
 ---
 
+## References e Borrowing
+
+Todo valor em Rust tem um dono/Owner por vez.
+
+O desafio vem, quando multiplas partes do código precisam reutilizar o mesmo valor para certos tipos como números, é mais tranquilo para criarmos uma cópia, mas para outros tipos dentro da heap, isso quer dizer em criarmos duplicatas de um valor que vai ocupar um espaço na memória.
+
+Vimos isso no último tópico com a ***Clone function***.
+
+Mas tem outra maneira de fazermos isso sem ficar clonando os valores, podemos usar uma ***Reference***.
+
+### Reference
+
+Uma reference/referência deixa o programa usar um valor sem nós movermos/tranferirmos a posse/responsabilidade do valor.
+
+Nós descrevemos essa ação de criar uma referência de ***borrowing/emprestar***.
+
+Isso é realmente algo que simula o mundo real, pegamos algo emprestado como uma ferramenta por exemplo, e a utilizamos até concluir o que estávamos fazendo, e devolvemos ao dono.
+
+
+Exemplo em pseudo código:
+
+```pseudo
+
+Pedro possui carro Audi A8 no endereco #800332334
+
+emprestar endereco #800332334 para testDrive
+
+testDrive(&carro)
+
+carro retorna ao dono Pedro
+
+```
+
+
+Exemplo em código:
+
+```rust
+fn main() {
+    let my_value = 2;
+    let my_address: &i32 = &my_value;
+
+    let heap_value = String::from("Toyota");
+    let heap_address = &heap_value;
+
+}
+```
+
+Palavras do Boris (Criador do Curso Learn to code with Rust).
+
+```text
+
+Now, technically speaking, there's a small semantic difference between the words reference and pointer.
+
+A reference is a type of pointer.
+
+We can call it a subcategory of pointers in Rust.
+
+A reference is guaranteed t### Reference
+
+Uma reference/referência deixa o programa usar um valor sem nós movermos/tranferirmos a posse/responsabilidade do valor.
+
+Nós descrevemos essa ação de criar uma referência de ***borrowing/emprestar***.
+
+Isso é realmente algo que simula o mundo real, pegamos algo emprestado como uma ferramenta por exemplo, e a utilizamos até concluir o que estávamos fazendo, e devolvemos ao dono.
+
+
+Exemplo em pseudo código:
+
+```pseudo
+
+Pedro possui carro Audi A8 no endereco #800332334
+
+emprestar endereco #800332334 para testDrive
+
+testDrive(&carro)
+
+carro retorna ao dono Pedro
+
+```
+
+
+Exemplo em código:
+
+```rust
+fn main() {
+    let my_value = 2;
+    let my_address: &i32 = &my_value;
+
+    let heap_value = String::from("Toyota");
+    let heap_address = &heap_value;
+
+}
+```
+
+Palavras do Boris (Criador do Curso Learn to code with Rust).
+
+```text
+
+Now, technically speaking, there's a small semantic difference between the words reference and pointer.
+
+A reference is a type of pointer.
+
+We can call it a subcategory of pointers in Rust.
+
+A reference is guaranteed to point to a valid value for the life or existence of that reference.
+
+In comparison, a plain pointer in other languages does not have that guarantee.
+
+So what this means is Rust will guarantee that 'my_heap_reference' is going to point to an address in
+
+the heap that is guaranteed to have this String, that is guaranteed to have a valid value.
+
+And, in other languages, you can actually run into problems where that's not the case.
+
+So just to distinguish again in real world terms, a reference is like an address to a house that is
+
+guaranteed to still be standing.
+
+To still be useful.
+
+Right.
+
+A pointer is like an address to a house that may or may not be there anymore.
+
+So a reference is safer.
+
+```
+
+Semanticamente falando Reference é um tipo de ponteiro, uma referencia é garantido que se for vc o endereço que a referencia traz, vai encontrar o valor do exemplo que foi feito em código.
+
+Em outras linguagens podemos enfrentar alguns erros se seguirmos esse exemplo.
+
+Pois como é dito por Boris, o ponteiro é um endereço para uma casa que pode ou não estar mais lá, sendo assim referência é mais segura.
+
+---
+o point to a valid value for the life or existence of that reference.
+
+In comparison, a plain pointer in other languages does not have that guarantee.
+
+So what this means is Rust will guarantee that 'my_heap_reference' is going to point to an address in
+
+the heap that is guaranteed to have this String, that is guaranteed to have a valid value.
+
+And, in other languages, you can actually run into problems where that's not the case.
+
+So just to distinguish again in real world terms, a reference is like an address to a house that is
+
+guaranteed to still be standing.
+
+To still be useful.
+
+Right.
+
+A pointer is like an address to a house that may or may not be there anymore.
+
+So a reference is safer.
+
+```
+
+Semanticamente falando Reference é um tipo de ponteiro, uma referencia é garantido que se for vc o endereço que a referencia traz, vai encontrar o valor do exemplo que foi feito em código.
+
+Em outras linguagens podemos enfrentar alguns erros se seguirmos esse exemplo.
+
+Pois como é dito por Boris, o ponteiro é um endereço para uma casa que pode ou não estar mais lá, sendo assim referência é mais segura.
+
+E uma regra que tem que ficar clara:
+
+|   Uma referencia não pode existir por mais tempo que o referente, ou o referente não pode ser apagado antes da referência
+
+|   Refences must never outlive their referent.
+
+
+
+---
+
 ## Clone function
 
 O modelo de Ownership em Rust existe para previnir problemas comuns que são presentes em outras linguagens de programação.
