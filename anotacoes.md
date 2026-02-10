@@ -19,6 +19,25 @@ Descricao
 
 ---
 
+## Copy trait with Reference
+
+Já utilizamos esse meio dentro do código só não nos "tocamos" disso.
+
+Exemplo do copy em uso:
+
+```rust
+fn main() {
+    let sorvete = "Flocos";
+    let sobremesa = sorvete;
+
+    print!("{} {}", sorvete, sobremesa);
+}
+```
+
+Ele cpoia a referência da refêrencia e joga para a ***sobremesa***.
+
+---
+
 ## String, &String, str and &str
 
 Um ensinamento direto da diferenciação entre esses tipos de string.
