@@ -19,6 +19,62 @@ Descricao
 
 ---
 
+## Mutable parameters
+
+Assim como variáveis, parâmetros de função são imutáveis por padrão.
+
+Isso quer dizer que não podemos mudar os valores que os parâmetros tem, temos que declarar eles como mutáveis ***mut*** só assim poderemos mudar os valores deles dentro do corpo da função.
+
+Mostrando isso em código:
+
+```rust
+fn main() {
+
+    let mut burguer = String::from("Burguer");
+
+    add_fries(burguer);
+
+}
+
+fn add_fries(lanche: String){
+    lanche.push_str(" with Fries.");
+}
+```
+
+Esse código está incorreto pois neste exemplo passamos a posse de Burguer para o lanche e lanche faz a mudança e o lanche "morre" com a alteração pois fica fora de escopo.
+
+Neste trecho
+```rust
+    add_fries(burguer);
+```
+O que estamos fazendo?
+|   Estamos passando o valor de burguer por parâmetro e estamos, ou movendo a posse de "Burguer" para ***lanche*** que está dentro da função, ou movemos a posse de "Burguer" para lanche.
+
+Neste caso estamos movendo ele pois a String fica armazenada na memória Heap.
+
+O código correto seria:
+
+```rust
+fn main() {
+
+    let burguer = String::from("Burguer");
+
+    add_fries(burguer); // let lanche = burguer;
+    // movemos a posse para lanche
+
+    // println!("{burguer}");
+
+}
+
+fn add_fries(mut lanche: String){
+    lanche.push_str(" with Fries.");
+    println!("{lanche}");
+}
+
+```
+
+---
+
 
 ## Ownership and Function Parameters
 
@@ -26,7 +82,21 @@ Vamos aprender nessa aula as regras de Ownership que se aplicam também para os 
 
 Aprendemos o conceito de Copy trait que a maioria dos tipos em Rust implementão, então esse conceito também é feito dentro de uma function quando passamos por parâmetro, assim não tem um move/tranferência de posse/Owner ele copia os dados da variável para o parâmetro.
 
+```rust
+fn main() {
+    let oranges = String::from("Oranges");
 
+    print_value(oranges); // let value = oranges; Oranges passa a posse de Oranges para value o parâmetro
+
+    println!("oranges {oranges}"); 
+
+
+}
+
+fn print_value(value: String){
+    println!("The value is {value}");
+}// Aqui a string Oranges é apagada pois foje do escopo fazendo
+```
 
 ---
 

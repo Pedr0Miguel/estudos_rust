@@ -1,13 +1,16 @@
 fn main() {
-    let oranges = String::from("Oranges");
 
-    print_value(oranges); // let value = oranges; Oranges passa a posse de Oranges para value o parâmetro
+    let burguer = String::from("Burguer");
 
-    println!("oranges {oranges}"); 
+    add_fries(burguer); // let lanche = burguer;
+    // movemos a posse para lanche
 
+    // println!("{burguer}");
 
 }
 
-fn print_value(value: String){
-    println!("The value is {value}");
-}// Aqui a string Oranges é apagada pois foje do escopo fazendo
+
+fn add_fries(mut lanche: String){
+    lanche.push_str(" with Fries.");
+    println!("{lanche}");
+}
