@@ -19,6 +19,20 @@ Descricao
 
 ---
 
+## String, &String, str and &str
+
+Um ensinamento direto da diferenciação entre esses tipos de string.
+
+Uma aula para reforçar a diferenciação entre esses tipos.
+
+
+código:
+```rust
+
+```
+
+---
+
 ## Dereference Operator
 
 Agora vamos aprender sobre o operador que retira a referência, ***Derefence***.

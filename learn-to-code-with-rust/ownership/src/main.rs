@@ -1,12 +1,16 @@
 fn main() {
-    let my_value = 2;
-    let my_address: &i32 = &my_value;
+    /*
+        String - Uma parte dinâmica de texto que é alocada na Heap;
 
-    println!("{}", my_address);
+        &String ("Referencia String") - Uma referência de uma string na Heap;
+
+        str - Uma string chumbada no código somente para leitura. Sendo chumbada no código binário do compilador.
+
+        &str ("Referencia str") - Uma referencia para um texto na memória que será carregado dentro do binário.
+    */
+
+    let sorvete = "Flocos";
     
-    let heap_value = String::from("Toyota");
-    let heap_address = &heap_value;
-
-    println!("{}", heap_address);
+    println!("{}", sorvete);
 
 }
