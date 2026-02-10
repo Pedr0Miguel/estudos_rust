@@ -19,6 +19,17 @@ Descricao
 
 ---
 
+
+## Ownership and Function Parameters
+
+Vamos aprender nessa aula as regras de Ownership que se aplicam também para os parâmetros de funções.
+
+Aprendemos o conceito de Copy trait que a maioria dos tipos em Rust implementão, então esse conceito também é feito dentro de uma function quando passamos por parâmetro, assim não tem um move/tranferência de posse/Owner ele copia os dados da variável para o parâmetro.
+
+
+
+---
+
 ## Copy trait with Reference
 
 Já utilizamos esse meio dentro do código só não nos "tocamos" disso.
