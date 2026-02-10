@@ -19,6 +19,40 @@ Descricao
 
 ---
 
+## Dereference Operator
+
+Agora vamos aprender sobre o operador que retira a referência, ***Derefence***.
+
+Um operador é um simbolo que aplica uma operação como o operador de adição, que é o "+".
+
+O operador de ***Dereference*** é o operador de multiplicação "*".
+
+O que é esse ***Dereference*** ou dereferência, ao invés de enviarmos o endereço de algo enviamos já o valor deste algo.
+
+Este operador só pode ser usado para acessarmos uma referência, o que significa?
+|   Só podemos usar esse valor em referencias
+
+Exemplo:
+
+```rust
+fn main() {
+    let my_value = 2;
+    let my_address: &i32 = &my_value;
+    
+    println!("{}", *my_address);
+    
+    let heap_value = String::from("Toyota");
+    let heap_address = &heap_value;
+
+    println!("{}", *heap_address);
+
+}
+```
+
+Isso tudo já é feito pelo rust por trás das câmeras, foi uma maneira de Boris nos mostrar isso de maneira fácil.
+
+---
+
 ## References e Borrowing
 
 Todo valor em Rust tem um dono/Owner por vez.
@@ -83,6 +117,8 @@ Uma reference/referência deixa o programa usar um valor sem nós movermos/tranf
 Nós descrevemos essa ação de criar uma referência de ***borrowing/emprestar***.
 
 Isso é realmente algo que simula o mundo real, pegamos algo emprestado como uma ferramenta por exemplo, e a utilizamos até concluir o que estávamos fazendo, e devolvemos ao dono.
+
+```
 
 
 Exemplo em pseudo código:
@@ -154,6 +190,8 @@ Em outras linguagens podemos enfrentar alguns erros se seguirmos esse exemplo.
 Pois como é dito por Boris, o ponteiro é um endereço para uma casa que pode ou não estar mais lá, sendo assim referência é mais segura.
 
 ---
+```text
+
 o point to a valid value for the life or existence of that reference.
 
 In comparison, a plain pointer in other languages does not have that guarantee.
