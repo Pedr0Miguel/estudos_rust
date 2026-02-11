@@ -19,6 +19,35 @@ Descricao
 
 ---
 
+## Retornando valores I
+
+Vamos discutir como as regras de Ownership podem influenciar no retorno dos valores.
+
+Exemplo:
+```rust
+fn main() {
+
+    let bolo = faz_bolo();
+    println!("{cake}");
+
+    
+}
+
+fn faz_bolo()-> String{
+    let cake = String::from("Chocolate");
+    return cake;
+}
+```
+O que acontece neste exemplo:
+
+- uma variável __cake__ é criada dentro de __faz_bolo__ e essa variável tem posse do valor __"Chocolate"__ que é guardada na Heap pois é uma ***String***;
+
+- Ao terminar a função é retornado esse valor para a variável __bolo__ ou seja, a posse de __cake__ vai para __bolo__ e a __cake__ não possui mais __posse__ de __Chocolate__;
+
+- Ao chegar no final da função __main__ a variável __bolo__ precisa "limpar" a memória Heap, pois __cake__ passou a posse para ela.
+
+---
+
 ## Mutable parameters
 
 Assim como variáveis, parâmetros de função são imutáveis por padrão.
