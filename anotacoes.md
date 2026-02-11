@@ -19,6 +19,35 @@ Descricao
 
 ---
 
+## Retornando valores II
+
+Mais algumas regras sobre retorno de valor e manipulação de variáveis.
+
+Exemplo de código que vai se tornar problemáticos:
+
+```rust
+fn main() {
+
+    let mut comida_atual = String::new();
+    comida_atual = add_sabor(comida_atual);
+}
+
+
+fn add_sabor(mut comida: String) -> String{
+    comida.push_str(" sabor energético");
+    comida
+}
+```
+
+Por enquanto é uma função só mas, imagina se for fazer mais e mais funções desse mesmo tipo, como vamos retornar os valores de volta para o __main__?
+
+Pois se for seguindo toda hora tem que ficar retornando o valor e fica muito verboso sendo quase inviável.
+
+
+
+
+---
+
 ## Retornando valores I
 
 Vamos discutir como as regras de Ownership podem influenciar no retorno dos valores.

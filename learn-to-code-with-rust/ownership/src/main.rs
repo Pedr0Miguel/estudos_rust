@@ -1,13 +1,11 @@
 fn main() {
 
-    let bolo = faz_bolo();
-    println!("{bolo}");
-
-    
+    let mut comida_atual = String::new();
+    comida_atual = add_sabor(comida_atual);
 }
 
 
-fn faz_bolo()-> String{
-    let cake = String::from("Chocolate");
-    cake
+fn add_sabor(mut comida: String)-> String{
+    comida.push_str(" sabor energético");
+    comida
 }
