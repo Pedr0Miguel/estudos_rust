@@ -19,6 +19,82 @@ Descricao
 
 ---
 
+## 121. Immutable and Mutable Reference Parameters
+
+Voltando ao mesmo exemplo que vimos anteriormente em ***Retornando valores II***
+
+```rust
+fn main() {
+    let mut comida_atual = String::new();
+    comida_atual = add_sabor(comida_atual);
+}
+
+fn add_sabor(mut comida: String) -> String {
+    comida.push_str(" sabor energético");
+    comida
+}
+```
+
+Neste caso sempre temos que ficar retornando as coisas para a main function para não ocorrer a dealocação do valor.
+
+Vamos fazer um exemplo que mostra apenas a solução do que estamos precisando com a função ***mostrar_comida***:
+
+```rust
+fn mostrar_comida(comida: &String){
+    println!("{comida}");
+}
+```
+
+Ao invés de passarmos o valor alterando a possa passamos a referencia desse valor, assim, alteramos o valor e sem perdelo.
+
+Então é só fazer algo como:
+
+```rust
+mostrar_comida(comida);
+```
+
+Que o código vai funcionar? Não.
+
+Não vai funcionar, pois vai dar erro de tipo pois a função espera uma referência de uma String e não uma String, então precisaríamos adicionar o "&" na variável.
+
+Código final para o uso correto no Rust:
+
+```rust
+fn main() {
+    let mut comida_atual = String::new();
+    add_sabor(&mut comida_atual);
+}
+
+/**
+ * Existe 4 maneiras de commo nós definirmos um parâmetro
+ * 
+ * comida: String - nome do parâmetro, seu tipo,
+ * ele recebe a responsabilidade do valor e que ele é imutável;
+ * 
+ * mut comida: String - nome do parâmetro, seu tipo,
+ * ele recebe a responsabilidade do valor e que ele é mutável;
+ * 
+ * comida: &String - nome do parâmetro,
+ * seu tipo que não é uma string e sim a referência de uma string,
+ * ele recebe a referência desse valor mas não altera o valor da memória;
+ * 
+ * comida: &mut String - nome do parâmetro,
+ * seu tipo que não é uma string e sim a referência de uma string,
+ * ele recebe a referência desse valor e consegue alterá-lo da maneira que quiser;
+ * 
+ */
+
+fn add_sabor(comida: &mut String) {
+    comida.push_str(" sabor energético");
+}
+
+fn mostrar_comida(comida: &String){
+    println!("{comida}");
+}
+```
+
+---
+
 ## Retornando valores II
 
 Mais algumas regras sobre retorno de valor e manipulação de variáveis.
