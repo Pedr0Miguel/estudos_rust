@@ -19,6 +19,95 @@ Descricao
 
 ---
 
+
+## 123. Mutable Reference Restrictions
+
+Um valor em nosso programa pode ter qualquer numero de referências imutáveis.
+
+Agora para referências que são mutáveis é apenas uma por vez. Não se pode nunca ter mais de uma ao mesmo tempo. Para um valor, claro.
+
+Pois é aquela analogia do carro azul e dos amigos. 
+
+Só pode um amigo alterar o carro por vêz. Nunca outra coisa.
+
+
+Neste código da última aula se fizer essa mudanç:
+
+```rust
+fn main() {
+    let mut car = String::from("Red");
+    let ref1 = &mut car;
+    let ref2 = &car;
+
+    println!("{} and {} and {}", &car, ref1, ref2);
+}
+```
+Em ordem para existir uma referência mutável o dono original tem que ser mutável também, então tem que adicionar o mut no original e na referência.
+
+Mas como código atual não será possível ele rodar pois o compilador além de não compilar vai jogar erros para corrigir isso.
+
+Mas se fizermos algo assim:
+
+```rust
+fn main() {
+    let mut car = String::from("Red");
+    let ref1 = &mut car;
+    let ref2 = &car;
+
+    println!("{}", ref2);
+}
+```
+
+O código compila pois ele sabe que não tem risco de existir alguma alteração da string que está sendo apontado.
+
+```rust
+    println!("{} and {} and {}", &car, ref1, ref2);
+```
+
+Neste caso acontece o erro pois as duas estão sendo usadas ao mesmo tempo.
+
+```rust
+fn main() {
+    let mut car = String::from("Red");
+    let ref1 = &mut car;
+    
+    ref1.push_str(" e preta");
+
+    println!("{}", ref1);
+    
+    let ref2 = &car;
+
+    println!("{}", ref2);
+}
+```
+
+No código acima não existe erro pois o uso de ref1 é feito antes da referência imutavel ser utilizada.
+
+Isso se dá ao fato da feature que está por trás das câmeras, ***Lifetimes***, tempo de vida, basicamente o tempo de vida do ref1 vai até a linha 6 do exemplo acima, como se tivesse um "escopo" indiretamente dizendo que o uso de ref1 vai até quando a referência é passada para ref2.
+
+É como se existisse algo assim por trás das câmeras:
+
+```rust
+fn main() {
+    let mut car = String::from("Red");
+
+    {let ref1 = &mut car;
+    
+        ref1.push_str(" e preta");
+
+        println!("{}", ref1);
+
+    }
+    
+    let ref2 = &car;
+
+    println!("{}", ref2);
+}
+```
+
+
+---
+
 ## 122. Multiple Immutable References
 
 A vantagem de usar a referência de uma memória é que o programa pode usar isso sem fazer duplicações do valor que está na memória.
