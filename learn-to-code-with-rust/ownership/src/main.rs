@@ -1,7 +1,8 @@
 fn main() {
-    let mut coffe = String::from("Cafee");
-    let a = &mut coffe;
-    let b = a;
+    
+}
 
-    println!("{a}, {b}");
+fn create_city()-> &String{
+    let city = String::from("New York");
+    &city
 }

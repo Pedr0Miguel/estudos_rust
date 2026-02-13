@@ -19,6 +19,26 @@ Descricao
 
 ---
 
+## 125. Dangling References
+
+Dangling references é ponteiro que aponta para um endereço de memória que foi desocupado.
+
+A boa notícia é que o compilador do Rust vai evitar que isso ocorra, ele valida que qualquer referência para um dado não pode ser usado pois o endereço que isso faz refência foi desocupado.
+
+Um exemplo de dangling reference error:
+
+```rust
+fn create_city()-> &String{
+    let city = String::from("New York");
+    &city
+}
+```
+O que acontece aqui, é criada uma variável chamada city mas não tem como acessar o valor de "New York" pois ao retornarmos o endereço do valor o valor será limpo logo em seguida, pois fica fora do escopo da função.
+
+O compilador do Rust vai nos dizer para prefirir apenas para retornar a string inteira.
+
+---
+
 ## 124. Ownership with Immutable and Mutable References
 
 Em lições passadas foi ensinado o Copy trait que se um tipo implementa esse valor ele vai automaticamente copiar o que o dono tem e passar para o próximo.
