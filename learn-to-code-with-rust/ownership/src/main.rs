@@ -1,8 +1,11 @@
 fn main() {
-    
-}
+    let registros = [true, false, true];
 
-fn create_city()-> &String{
-    let city = String::from("New York");
-    &city
+    let first = registros[0];
+
+    println!("{first} e array {registros:?}");
+    
+    let langs = [String::from("Rust"), String::from("Go")];
+    let first_lang = &langs[0];
+    println!("{first_lang} e array {langs:?}");
 }

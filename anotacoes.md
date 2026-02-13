@@ -19,6 +19,71 @@ Descricao
 
 ---
 
+## 126. Ownership with Arrays and Tuples
+
+Vamos ver como funciona o conceito de Ownership em um Array e Tupla.
+
+Colection types como array e tuplas são donos dos valores então eles são responsáveis por limpar a memória depois que saírem do escopo.
+
+Um exemplo seria que uma variável é dona do array mas o tipo array é dono dos próprios valores.
+
+Exemplo em código:
+
+```rust
+fn main() {
+    let registros = [true, false, true];
+}
+```
+
+As mesmas regras de Ownership se aplicam então, a variável ***registros*** é o responsável por limpar os dados (o array), mas o array é o responsável pelos elementos internos dele.
+
+Mais código:
+
+```rust
+fn main() {
+    let registros = [true, false, true];
+
+    let first = registros[0];
+
+    println!("{first} e array {registros:?}");
+}
+```
+
+Este código funciona pois o ***true*** da posição 0 é um boolean e o tipo boolean implementa o copy trait então tudo funciona normalmente, pois o rust faz uma cópia completa do ***true*** e depois repassa ao first.
+
+Mas e se for um array com tipos de valores que não guardam os dados na memória Stack?
+
+Ex:
+```rust
+let langs = [String::from("Rust"), String::from("Go")];
+let first_lang = langs[0];
+```
+
+Neste código temos um array com Strings e vamos tentar adicionar o valor para o variável first_lang, assim o código não compila pois como não tem como usar o Copy Trait rust teria que mover a responsabilidade para a variável, o que não seria possível também, pois o array teria uma responsabilidade parcial pois ele ainda seria responsável pela String Go mas não seria responsável pela String Rust pois ela teve a responsabilidade movida para first_lang.
+
+Mas ao tentar compilar o rust nos dará 2 soluções possíveis para essa situação:
+
+- Uma seria usar o conceito de borrowing, que seria apenas colocar assim:
+
+```rust
+let langs = [String::from("Rust"), String::from("Go")];
+let first_lang = &langs[0];
+```
+
+- E a segunda seria usar o método clone:
+
+```rust
+let langs = [String::from("Rust"), String::from("Go")];
+let first_lang = langs[0].clone();
+```
+Desta forma o Rust do clone literalmente clona o texto Rust na Heap o que é ruim pois duplicar algo que já existe é meio redundante.
+
+A melhor seria a primeira pois só pegamos a referência para alterarmos.
+
+A mesma coisa que pode se aplicar para as tuplas só trocar os ***"[]"*** por ***()***.
+
+---
+
 ## 125. Dangling References
 
 Dangling references é ponteiro que aponta para um endereço de memória que foi desocupado.
