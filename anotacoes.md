@@ -19,6 +19,52 @@ Descricao
 
 ---
 
+## 122. Multiple Immutable References
+
+A vantagem de usar a referência de uma memória é que o programa pode usar isso sem fazer duplicações do valor que está na memória.
+
+O problema ocorre quando temos multiplas referencias com que vão ser usadas em diferentes contextos para um dado.
+
+Vamos supor que uma função tem uma referencia do valor mas uma segunda função muda o valor completamente? Isso vai ocasionar em bugs e comportamentos não mapeados, isso é o que acontecia em outras linguagens.
+
+E Rust trabalha para que isso não aconteça.
+
+Fazendo uma analogia para o mundo real.
+
+- Vamos dizer que você tem um carro azul mas você vai emprestar esse carro para 2 amigos.
+
+- Você dá o endereço da garagem que está o seu carro azul;
+
+- O primeiro amigo prometem que vai ser de uso imutável que não vai haver alterações no seu carro;
+
+- Então é esperado que os dois vão receber emprestado um carro azul e vão retornar um carro azul;
+
+- Mas o seu segundo amigo, pede uma referencia mutável, eles ainda vão pegar o seu carro, você ainda vai ser o dono;
+
+- Mas no tempo que eles estiverem com o carro eles tem a permissão para alterar o carro, como alterar a cor do carro para vermelho;
+
+- Então o 1° espera que o carro seja azul mas o segundo pode alterar ele para vermelho;
+
+- Com isso pode rolar um conflito pois o seu primeiro amigo espera um carro azul e vai receber um carro vermelho;
+
+Como Rust resolve um problema como este?
+
+Nesta aula, foi mostrado que Rust permite ***inúmeras referências imutáveis*** para o mesmo valor ao mesmo tempo.
+
+Você pode criar quantos "empréstimos" quiser, o porque de o Rust permitir é que não tem nenhum perigo nisso, pois o valor emprestado é imutável.
+
+O que podemos dizer é que podemos ter vários leitores do valor mas pode ter apenas um alterando o valor.
+
+Buscando essa explicação para a nossa analogia, basicamente você pode emprestar seu carro para 100 amigos ou mais desde que a referência seja imutável.
+
+Ex em código:
+
+```rust
+
+```
+
+---
+
 ## 121. Immutable and Mutable Reference Parameters
 
 Voltando ao mesmo exemplo que vimos anteriormente em ***Retornando valores II***
