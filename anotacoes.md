@@ -19,6 +19,57 @@ Descricao
 
 ---
 
+## 124. Ownership with Immutable and Mutable References
+
+Em lições passadas foi ensinado o Copy trait que se um tipo implementa esse valor ele vai automaticamente copiar o que o dono tem e passar para o próximo.
+
+Isso acontece com referências também, se fizermos várias referências imutáveis o Rust vai criar uma cópia completa por ser seguro fazer isso com referências imutáveis.
+
+Uma referência é fácil de copiar pois é apenas um único endereço de memória.
+
+EX:
+```rust
+fn main() {
+    let coffe = String::from("Cafee");
+    let a = &coffe;
+    let b = a;
+
+    println!("{a}, {b}");
+}
+```
+
+Aqui podemos ver que o código vai rodar e será possível fazer uso das duas pois é implementado o Copy trait.
+
+Por trás das câmeras rust faz isso:
+
+```rust
+    let a = &coffe;
+    let b = &coffe;
+```
+
+Por ser mais fácil.
+
+Mas referências mutáveis não implementam esse Copy trait, e isso acontece pois tem que respeitar a regra apresenta na aula anterior.
+
+Então se fizermos a referência ser mutável não vai funcionar o código abaixo:
+
+```rust
+fn main() {
+    let mut coffe = String::from("Cafee");
+    // coffe primeiro dono de Caffe
+
+    let a = &mut coffe;
+    // a recebe o valor e está usando o Caffe é o dono e pode alterar o valor Caffe
+
+    let b = a;
+    // b agora vira dono da referência que é imutável então a responsabilidade de "a" acabou
+
+    println!("{a}, {b}"); // O que está acontecendo aqui? "a" não é mais dono da referência.
+}
+```
+
+---
+
 
 ## 123. Mutable Reference Restrictions
 
