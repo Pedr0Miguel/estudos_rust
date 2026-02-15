@@ -41,8 +41,8 @@ fn main() {
 
 - Podemos ver que peguei o 32 e 68 e passei a referência deles para ***my_slice***;
 - Após o println fazemos uma mudança: mudamos o indice zero de my_slice para 100;
-- Como my_slice só possui dois indices? Pq ele pegou os valores dos indices 2(32) e 3(68) que viraram 0 e 1 no array de referências my_slice;
 - Após a modificação verificamos que o values mudou também pois nós mudamos o valor que estava no endereço de memória que ele possuía.
+- Como my_slice só possui dois indices? Pq ele pegou os endereços de memória valores dos indices 2(32) e 3(68) que viraram 0 e 1 no array de referências (só possui o endereço de memória dos valores) my_slice;
 
 ---
 
