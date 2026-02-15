@@ -19,6 +19,41 @@ Descricao
 
 ---
 
+## 135. Syntactic Shortcuts
+
+Nesta lição vamos ver alguns atalhos da sintaxe para slices.
+
+Este atalho pode ser usado em Strings e str não tem diferenciação.
+
+código à ser explicado:
+
+```rust
+fn main() {
+    let actor = String::from("Arnold Schwarzenegger");
+
+    let primeiro_nome = &actor[..6];
+    println!("{primeiro_nome}");
+
+    let sobrenome = &actor[7..];
+    println!("{sobrenome}");
+}
+```
+Os atalhos é para simplificar quando estamos pegando algo do início até um valor que queremos então para não digitarmos o zero não colocamos nada, ficando apenas ***..6***;
+
+Mesma coisa para o final só colocamos da onde queremos pegar e deixamos sem nada que simboliza que queremos pegar até o final.
+
+E se quisermos pegar o "todo" como faremos?
+|   Só usar ***[..]***
+
+```rust
+let nome_completo = &actor[..];
+println!("{nome_completo}");
+```
+
+Isso ainda é teoricamente um slice, pois pega tudo mas ainda assim é um slice (É mais fácil usar apenas &variável). 
+
+---
+
 ## 134. String Slice Lengths
 
 Agora vamos discutir o tamanho de uma string slice.

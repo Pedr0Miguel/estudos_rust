@@ -1,7 +1,12 @@
 fn main() {
-    let comida = "📦";
-    println!("{}", comida.len());
+    let actor = String::from("Arnold Schwarzenegger");
 
-    let pedaco_pizza = &comida[0..3];
-    println!("{}", pedaco_pizza.len());
+    let primeiro_nome = &actor[..6];
+    println!("{primeiro_nome}");
+
+    let sobrenome = &actor[7..];
+    println!("{sobrenome}");
+
+    let nome_completo = &actor[..];
+    println!("{nome_completo}");
 }
