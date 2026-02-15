@@ -60,6 +60,8 @@ fn main() {
 }
 ```
 
+Resolução do curso: Acertamos tudo.
+
 ---
 
 ## 139. Mutable Array Slices
