@@ -19,6 +19,43 @@ Descricao
 
 ---
 
+## 132. Create a String Slice from a String
+
+Pondo em prática o conceito que vimos em Slices.
+
+Neste exemplo temos o método sem slice:
+
+```rust
+fn main() {
+    let actor = String::from("Arnold Schwarzenegger");
+    let referencia = &actor;
+}
+```
+
+Aqui pegamos a referência ao nome mas a desvantagem é que pegamos todos o nome.
+
+E se quiséssemos apenas o primeiro nome como faríamos?
+
+```rust
+fn main() {
+    let actor = String::from("Arnold Schwarzenegger");
+    let referencia = &actor[0..6];
+}
+```
+
+Ao adicionarmos os colchetes e colocarmos o range type, pegamos os 5 primeiros bytes, 0 até o 5;
+
+Pois a maioria das coisas começam em zero na programação.
+
+E assim fazemos um slice de uma coleção, pegamos apenas a parte que nos interessava.
+
+Nota: Na maioria das vezes um caractere vai ocupar apenas um byte, mas acredito eu que caracteres especiais sejam a exceção e outra exceção é emojis então pode ser que tenha que pegar mais bytes.
+
+
+
+
+---
+
 ## Slices
 
 Rust tem alguns tipos que são collections/coleções possuem vários dados dentro deles e eles são responsáveis pelos dados dentro deles.
