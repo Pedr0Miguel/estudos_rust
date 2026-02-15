@@ -1,14 +1,11 @@
 fn main() {
-    let values = [4, 5, 45, 23, 75, 22];
+    let mut values = [2, 63, 32, 68, 21, 4];
+    let my_slice: &mut [i32] = &mut values[2..4];
 
-    let regular_ref: &[i32; 6] = &values;
-
-    diz_tamanho(regular_ref);
-
-    let slice_3: &[i32] = &values[..3];
-    diz_tamanho(slice_3);
-}
-
-fn diz_tamanho(reference: &[i32; 6]) {
-    println!("{}", reference.len());
+    println!("minha parte {my_slice:?}");
+    
+    my_slice[0] = 100;
+    println!("minha parte {my_slice:?}");
+    println!("minha array {values:?}");
+    
 }

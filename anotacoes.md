@@ -19,6 +19,33 @@ Descricao
 
 ---
 
+## 139. Mutable Array Slices
+
+Rust não permite uma slice mutável de uma String, se estamos ***emprestando/borrowing*** uma slice de String só vamos conseguir fazer isso se for uma slice imutável, não podemos alterar nenhum elemento da slice que é uma referência a uma porção de caracteres dentro de uma string.
+
+Porém, Rust permite mutable slices de arrays.
+
+```rust
+fn main() {
+    let mut values = [2, 63, 32, 68, 21, 4];
+    let my_slice: &mut [i32] = &mut values[2..4];
+
+    println!("minha parte {my_slice:?}");
+    
+    my_slice[0] = 100;
+    println!("minha parte {my_slice:?}");
+    println!("minha array {values:?}");
+    
+}
+```
+
+- Podemos ver que peguei o 32 e 68 e passei a referência deles para ***my_slice***;
+- Após o println fazemos uma mudança: mudamos o indice zero de my_slice para 100;
+- Como my_slice só possui dois indices? Pq ele pegou os valores dos indices 2(32) e 3(68) que viraram 0 e 1 no array de referências my_slice;
+- Após a modificação verificamos que o values mudou também pois nós mudamos o valor que estava no endereço de memória que ele possuía.
+
+---
+
 ## 138. Deref Coercion with Array Slices
 
 Igual acontece com a conversão que o Rust faz com o &String se tornando um &str, pode acontecer a mesma coisa com os arrays.
