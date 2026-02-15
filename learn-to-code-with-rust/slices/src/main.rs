@@ -1,8 +1,7 @@
 fn main() {
-    let primeiro_nome = {
-        let actor: &str = "Arnold Schwarzenegger";
-        &actor[0..6]
-    };
+    let comida = "📦";
+    println!("{}", comida.len());
 
-    println!("{primeiro_nome}");
+    let pedaco_pizza = &comida[0..3];
+    println!("{}", pedaco_pizza.len());
 }

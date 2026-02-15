@@ -19,6 +19,44 @@ Descricao
 
 ---
 
+## 134. String Slice Lengths
+
+Agora vamos discutir o tamanho de uma string slice.
+
+O tamanho de uma string slice é a contagem de bytes que ela tem e não os caracteres;
+
+Nós podemos chamar o method .len() que trará o tamanho total que uma string slice tem.
+
+Exemplo:
+
+```rust
+fn main() {
+    let comida = "pizza";
+    println!("{}", comida.len());
+    let pedaco_pizza = &comida[0..3];
+    println!("{}", pedaco_pizza.len());
+}
+```
+
+Temos que tomar cuidado pois quando fazemos um slice podemos pegar um caractere que é representado por mais de um byte.
+
+Todos os caracteres do alfabeto conseguem ser representados por um byte, mas os caracteres especiais que são usados em outras linguas precisam de uma sequencia de caracteres para serem representados e também emojis.
+
+Ex:
+
+```rust
+fn main() {
+    let comida = "📦";
+    println!("{}", comida.len());
+
+    let pedaco_pizza = &comida[0..3];
+    println!("{}", pedaco_pizza.len());
+}
+
+```
+
+---
+
 ## 133. String Slices and String Literals
 
 Vamos agora mudar o nosso exemplo anterior de Slice ao invés de usarmos String vamos usar o str e ver como o programa se comporta.
