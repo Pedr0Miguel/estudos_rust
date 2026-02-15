@@ -1,13 +1,18 @@
-fn salvou_dia(nome: &str) {
-    println!("{nome} salvou o dia");
-}
-
 fn main() {
-    let actor = String::from("Arnold Schwarzenegger");
-    salvou_dia(&actor);
-    let outro = "Syvester Stallone";
-    salvou_dia(&outro);
+    let values = [4, 5, 45, 23, 75, 22];
+    let my_slice = &values[..2];
 
-    let primeiro_nome = &actor[0..6];
-    salvou_dia(primeiro_nome);
+    dbg!(my_slice);
+
+    let my_slice = &values[2..6];
+    dbg!(my_slice);
+
+    let my_slice = &values[2..];
+    dbg!(my_slice);
+
+    let my_slice: &[i32] = &values[..];
+    dbg!(my_slice);
+
+    let my_slice: &[i32; 6] = &values;
+    dbg!(my_slice);
 }

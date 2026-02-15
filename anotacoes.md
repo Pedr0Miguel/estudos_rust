@@ -19,6 +19,37 @@ Descricao
 
 ---
 
+
+## 137. Array Slices
+
+Em arrays não muda muita coisa, a única coisa que muda é que os numeros dentro do "[]" vão se referenciar aos índices dentro deles, que nos traz os valores que estão alocados nesses índices.
+
+```rust
+fn main() {
+    let values = [4, 5, 45, 23, 75, 22];
+    let my_slice = &values[..2];
+
+    dbg!(my_slice);
+
+    let my_slice = &values[2..6];
+    dbg!(my_slice);
+
+    let my_slice = &values[2..];
+    dbg!(my_slice);
+
+    let my_slice: &[i32] = &values[..];
+    dbg!(my_slice);
+
+    let my_slice: &[i32; 6] = &values;
+    dbg!(my_slice);
+}
+```
+
+Por que os dois últimos estão diferentes?
+|   Um está esperando um array que possui i32 mas não importa o tamanho dele, desde que seja i32s, o outro específica que é um array que possui 6 i32s então ele é específico enquanto o outro aceita o tamanho que for desde que seja i32.
+
+---
+
 ## 136. String Slices as Function Parameters
 
 Agora, vamos ver o comportamento de uma string slice como parâmetro de uma função.
