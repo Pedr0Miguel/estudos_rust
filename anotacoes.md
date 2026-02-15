@@ -19,6 +19,37 @@ Descricao
 
 ---
 
+## 138. Deref Coercion with Array Slices
+
+Igual acontece com a conversão que o Rust faz com o &String se tornando um &str, pode acontecer a mesma coisa com os arrays.
+
+Código:
+
+```rust
+fn main() {
+    let values = [4, 5, 45, 23, 75, 22];
+
+    let regular_ref: &[i32; 6] = &values;
+
+    diz_tamanho(regular_ref);
+
+    let slice_3: &[i32] = &values[..3];
+    diz_tamanho(slice_3);
+}
+
+fn diz_tamanho(reference: &[i32; 6]) {
+    println!("{}", reference.len());
+}
+```
+
+Neste exemplo aqui se for tentar rodar ele, vai ocorrer erro, pois a função espera um array de 6 indices composto por i32s.
+
+Ao tentar colocar o slice_3 não será possível rodar pois mesmo que o slice_3 seja do tipo ***&[i32]*** ele ainda não é um ***&[i32; 6]*** então o código não roda.
+
+Mas se mudarmos o ***parâmetro*** para o tipo ***&[i32]*** ele compila, pois não importa o tamanho do array pode ser de 100 a apenas 1, a função vai aceitar desde que o array que for passado seja um array de inteiros.
+
+---
+
 
 ## 137. Array Slices
 

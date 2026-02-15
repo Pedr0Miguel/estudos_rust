@@ -1,18 +1,14 @@
 fn main() {
     let values = [4, 5, 45, 23, 75, 22];
-    let my_slice = &values[..2];
 
-    dbg!(my_slice);
+    let regular_ref: &[i32; 6] = &values;
 
-    let my_slice = &values[2..6];
-    dbg!(my_slice);
+    diz_tamanho(regular_ref);
 
-    let my_slice = &values[2..];
-    dbg!(my_slice);
+    let slice_3: &[i32] = &values[..3];
+    diz_tamanho(slice_3);
+}
 
-    let my_slice: &[i32] = &values[..];
-    dbg!(my_slice);
-
-    let my_slice: &[i32; 6] = &values;
-    dbg!(my_slice);
+fn diz_tamanho(reference: &[i32; 6]) {
+    println!("{}", reference.len());
 }
