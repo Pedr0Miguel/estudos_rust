@@ -19,6 +19,36 @@ Descricao
 
 ---
 
+## Slices
+
+Rust tem alguns tipos que são collections/coleções possuem vários dados dentro deles e eles são responsáveis pelos dados dentro deles.
+
+- Um slice/fatia é uma referência a uma porção/sequencia de uma coleção, é uma subcategoria de referência;
+- Uma ***fatia*** de uma ***string*** é a referência para uma sequencia de caracteres dessa ***string***;
+- Uma ***fatia*** de um ***array*** é uma referência de uma sequencia de elementos de um ***array***;
+- Como uma referência, uma ***fatia/slice*** não pega responsabilidade de uma coleção.
+
+Como já diz o significado de ***fatia/slice*** uma fatia é a porção de um todo, pode ser uma porção grande, pequena ou até mesmo o todo.
+
+Exemplo:
+
+```pseudo
+Eu sou dono de uma casa;
+
+No conceito anterior eu te empresto a casa toda;
+
+Mas no conceito de slice eu posso te emprestar:
+
+Um quarto;
+
+Um piso da casa;
+
+A casa toda (Mesmo sendo teoricamente a casa toda ela ainda é uma fatia);
+
+```
+
+---
+
 ## Resolvendo o coding_challenge
 
 Código:
