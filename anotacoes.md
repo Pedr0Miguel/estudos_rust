@@ -19,6 +19,47 @@ Descricao
 
 ---
 
+## 136. String Slices as Function Parameters
+
+Agora, vamos ver o comportamento de uma string slice como parâmetro de uma função.
+
+No código abaixo temos:
+
+```rust
+fn salvou_dia(nome: &String) {
+    println!("{nome} salvou o dia");
+}
+
+fn main() {
+    let actor = String::from("Arnold Schwarzenegger");
+    salvou_dia(&actor);
+    let outro: &str = "Syvester Stallone";
+    salvou_dia(&outro);
+}
+```
+
+- Temos uma função que pede uma referência de uma String.
+- Obviamente a parte que tem ***outro*** não irá rodar pois estamos passando uma &str;
+- Mas e se a função salvou_dia pedir um &str o que irá acontecer?
+
+```rust
+fn salvou_dia(nome: &str) {
+    println!("{nome} salvou o dia");
+}
+
+fn main() {
+    let actor = String::from("Arnold Schwarzenegger");
+    salvou_dia(&actor);
+    let outro: &str = "Syvester Stallone";
+    salvou_dia(&outro);
+}
+```
+
+Aqui o código irá funcionar sem problemas, mas porque?
+|   Basicamente o que o Rust faz por trás das câmeras, ele converte a &String para ser um &str, mas ele não faz isso quando é o papel inverso, pois uma &String pode se tornar uma &str mas uma &str nunca vai ser uma &String.
+
+---
+
 ## 135. Syntactic Shortcuts
 
 Nesta lição vamos ver alguns atalhos da sintaxe para slices.
