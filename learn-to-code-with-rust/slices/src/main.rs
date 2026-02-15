@@ -1,8 +1,8 @@
 fn main() {
-    let actor = String::from("Arnold Schwarzenegger");
-    let referencia = &actor[0..=5];
-    println!("{referencia}");
+    let primeiro_nome = {
+        let actor: &str = "Arnold Schwarzenegger";
+        &actor[0..6]
+    };
 
-    let sobrenome = &actor[7..21];
-    println!("{sobrenome}");
+    println!("{primeiro_nome}");
 }

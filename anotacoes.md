@@ -19,6 +19,33 @@ Descricao
 
 ---
 
+## 133. String Slices and String Literals
+
+Vamos agora mudar o nosso exemplo anterior de Slice ao invés de usarmos String vamos usar o str e ver como o programa se comporta.
+
+```rust
+fn main() {
+    let primeiro_nome = {
+        let actor: &str = "Arnold Schwarzenegger";
+        &actor[0..6]
+    };
+
+    println!("{primeiro_nome}");
+}
+```
+
+Neste caso o código rodaria? Você pode dizer:
+|   "Não pois estamos retornando que algo não existiria mais pois no final do "}" a str Arnold Schwarzenegger deixaria de existir."
+
+Mas na verdade o código roda pois o tipo &str é uma referência a uma str que está chumbada no código binário do executável.
+
+Então mesmo que saia do escopo o código não apaga essa str pois ela foi chumbada no código e apenas passamos a referência para esses 6 bytes que existem.
+
+A única diferença do código anterior para esse é que o outro era armazenado na Heap e era propriedade de uma String.
+
+
+---
+
 ## 132. Create a String Slice from a String
 
 Pondo em prática o conceito que vimos em Slices.
