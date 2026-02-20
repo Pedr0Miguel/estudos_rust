@@ -19,6 +19,115 @@ Descricao
 
 ---
 
+## 144. Define a Struct, 145. Create a Struct Instace e 146. Access Struct Fields
+
+Strutcs em Rust é um container/objeto que pode armazenar vários tipos de types.
+
+No curso nos foi apresentado que um tipo muito semelhante a isso é o Tuplas, que possui essas mesmas características mas você não tem uma descrição muito boa sobre o que são aquelas informações você só sabe que tem que passar alguns tipos de dados específicos dentro dela.
+
+Rust possui 3 tipos de structs:
+- Named fields Structs
+- Tuple-Like Structs
+- Unit-Like Structs
+
+A maioria das vezes vai ser usado o ***Named fields***.
+
+Pra criar uma struct é igual a outras linguagens:
+
+```rust
+fn main() {
+    struct Coffe {
+        name: String,
+        price: f64,
+        hot: bool,
+    }
+}
+```
+### Criando uma instância de uma Struct
+
+Como criar uma struct é basicamente criar um tipo novo no Rust para instanciarmos é assim:
+
+```rust
+fn main() {
+    struct Coffe {
+        name: String,
+        price: f64,
+        hot: bool,
+    }
+
+    let mocha = Coffe {
+        name: String::from("Mocha"),
+        price: 1.99,
+        hot: false,
+    };
+}
+
+```
+
+
+### Acessando ou lendo campos de uma Struct
+
+Nós chamados a variável da struct e depois colocamos o campo que queremos puxar, então seria mais ou menos assim: `variável.campo`
+
+Exemplo:
+
+```rust
+fn main() {
+    struct Coffe {
+        name: String,
+        price: f64,
+        hot: bool,
+    }
+
+    let mocha = Coffe {
+        name: String::from("Mocha"),
+        price: 1.99,
+        hot: false,
+    };
+
+    println!("{}, {}, {},", mocha.name, mocha.price, mocha.hot);
+}
+
+```
+
+Mas e as regras de Ownership? Como funcionam em uma struct?
+
+Uma struct é a dona/owner dos próprios campos e o campo dentro da struct é dono dos valores dentro deles.
+
+Então a `mocha` é dona da estrutura que lhe foi passada, mas a struct é dona dos campos, e assim o campo é dono dos valores que foram passados.
+
+
+Diferentemente do que temos no array uma struct não vai sofrer do mesmo problema que um array sofre ao passarmos um valor para uma variável.
+
+Se passarmos uma String para uma variável a responsabilidade por limpá-la também será movida.
+
+exemplo em código:
+
+```rust
+fn main() {
+    struct Coffe {
+        name: String,
+        price: f64,
+        hot: bool,
+    }
+
+    let mocha = Coffe {
+        name: String::from("Mocha"),
+        price: 1.99,
+        hot: false,
+    };
+
+    println!("{}, {}, {},", mocha.name, mocha.price, mocha.hot);
+
+    let nome_cafe = mocha.name;
+
+    println!("{nome_cafe}");
+    println!("{}", mocha.name);
+}
+```
+
+---
+
 ## 140. Resolvendo o desafio
 
 Código da resolução (Minha versão):
@@ -77,7 +186,7 @@ fn main() {
 
     println!("minha parte {my_slice:?}");
     
-    my_slice[0] = 100;
+    my_lice[0] = 100;
     println!("minha parte {my_slice:?}");
     println!("minha array {values:?}");
     
