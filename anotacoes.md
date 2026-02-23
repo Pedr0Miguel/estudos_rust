@@ -19,11 +19,6 @@ Descricao
 
 ---
 
-<<<<<<< HEAD
-## Match Statement
-
-O match é igual ao switch case em muitas linguagens, temos muitos ifs para usar? Usa o match statement que é a mesma ideia de switch case.
-=======
 ## 144. Define a Struct, 145. Create a Struct Instace e 146. Access Struct Fields
 
 Strutcs em Rust é um container/objeto que pode armazenar vários tipos de types.
@@ -365,7 +360,6 @@ fn main() {
 Temos que tomar cuidado pois quando fazemos um slice podemos pegar um caractere que é representado por mais de um byte.
 
 Todos os caracteres do alfabeto conseguem ser representados por um byte, mas os caracteres especiais que são usados em outras linguas precisam de uma sequencia de caracteres para serem representados e também emojis.
->>>>>>> refs/remotes/origin/main
 
 Ex:
 
