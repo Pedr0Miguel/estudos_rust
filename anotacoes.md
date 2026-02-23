@@ -365,99 +365,15 @@ Ex:
 
 ```rust
 fn main() {
-<<<<<<< HEAD
-    let evaluation = false;
-
-    /** 
-     * Neste exemplo estou retornando os valores 20 e 40 a uma variável.
-     * 
-     * Mas é possível adicionar um bloco de código para executar um código
-     * como no código abaixo
-    */ 
-
-    let exemplo = match evaluation {
-        true => 20,
-        false => 40,
-    };
-
-
-
-    print!("{exemplo}");
-}
-
-
-
-fn main() {
-    let evaluation = false;
-
-    match evaluation {
-        true => {
-            print!("TRUE!");
-        }
-        false => {
-            print!("FALSE!");
-        }
-    }
-=======
     let comida = "📦";
     println!("{}", comida.len());
 
     let pedaco_pizza = &comida[0..3];
     println!("{}", pedaco_pizza.len());
->>>>>>> refs/remotes/origin/main
 }
 
 ```
 
-<<<<<<< HEAD
-Porém no match statement o código tem que retornar o mesmo valor se for usar o primeiro trecho de código.
-
-
-E você precisa mapear todas as possibilidades possíveis dentro do match statement:
-
-exemplo:
-
-```rust
-match evaluation {
-    "verão" => "calor",
-    "inverno" => "frio",
-    //para mapear o que não vier como calor ou inverno
-    _ => "Não importa"
-};
-```
-
-### Colocando condições dentro do match
-
-Podemos colocar condições dentro do match para mapear mais de uma condição:
-
-exemplo:
-
-```rust
-
-    let number: i32 = 8;
-
-    match number {
-        2 | 4 | 6 | 8 | 10 => print!("PAR"),
-        _ => print!("IMPAR"),
-    };
-```
-
-
-OU temos uma outra forma que seria:
-
-```rust
-
-match number {
-    x if x % 2 == 0 => print!("PAR"),
-    x if x % 2 != 0 => print!("IMPAR"),
-    _ => unreachable!(),
-};
-
-```
-
-O unreachable é como dizer que aquela opção nunca vai acontecer e o compilador vai ignorar o _ mas o programador tem que garantir que não tem como acontecer outro caso.
-
-=======
 ---
 
 ## 133. String Slices and String Literals
@@ -1680,7 +1596,6 @@ continue;
 ```
 
 
->>>>>>> refs/remotes/origin/main
 ---
 
 ## Funções
