@@ -19,6 +19,39 @@ Descricao
 
 ---
 
+## 147. Overwrite Struct Fields
+
+Nesta lição vamos aprender a substituir os valores dentro de uma instância struct.
+
+Para isso já colocamos a palavra-chave mut antes do nome para nos possbilitar essa manipulação.
+
+exemplo em código:
+```rust
+struct Coffe {
+    name: String,
+    price: f64,
+    hot: bool,
+}
+
+let mut mocha = Coffe {
+    name: String::from("Mocha"),
+    price: 1.99,
+    hot: false,
+};
+```
+
+Importante dizer que o que estamos fazendo é colocar a instância que criamos da struct como mutável, pois a struct não possui esse conceito de imutabilidade é apenas o template para criar uma instância.
+
+Importante só para relembrar pois já é batido isso.
+
+Instâncias que são imutáveis não podemos alterar nada delas, é como se fosse uma constante que não podemos alterar de maneira alguma.
+
+Instâncias mutáveis podemos alterar tudo que quisermos pois é mutável.
+
+Imutável a struct INTEIRA é imutável os campos não podem ser alterados nem nada.
+
+---
+
 ## 144. Define a Struct, 145. Create a Struct Instace e 146. Access Struct Fields
 
 Strutcs em Rust é um container/objeto que pode armazenar vários tipos de types.
