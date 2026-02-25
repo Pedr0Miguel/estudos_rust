@@ -19,6 +19,46 @@ Descricao
 
 ---
 
+## Duplicating values in Structs
+
+Nesta lição vamos aprender quando queremos criar uma nova estrutura baseada em uma outra estrutura já criada.
+
+From now on we will note our ideas and resumes in English, so other people thing "Oh he is intelligent!" or "Oh he is studying in English what a student!"
+
+So going back to our studies.
+
+We have this code: `let coffe: Coffe = make_coffe(nome, 3.99, true);`
+
+We want to instance another coffe struct with the same price an is_hot but we'll use another name, what do we do? We just copy and paste the last code and hardcode another one?
+
+One of the methods we can use is:
+
+```rust
+    let latte: Coffe = make_coffe(String::from("Latte"), coffe.price, coffe.is_hot);
+```
+
+What we do here? We just use the Copy trait and copy the values we want, it is a fair way to do that but it's not efficient.
+
+We can spreading another instance field to another, to use this method just type `..coffe`:
+
+In code it would be like this:
+
+```rust
+
+    let latte: Coffe = make_coffe(String::from("Latte"), ..coffe);
+
+```
+
+What happens here is, rust will see that we are already using the name field in the make coffe the ..coffe means that we want to copy all the other fields after the name parameter.
+
+
+You can say that that method is not secure too, because if we change the `coffe` struct, `latte` will be affected, but no these to instabces are independent. It will suffer changes before we instance latte, so all the changes that the coffe price will have will affefct latte price because the price in latte does not exists yet, after we instance latte the price of coffe can be changed and the latte price will not receive the same change.
+
+But we need to have one thing in mind when using the methods above, they are an ansingment so if we remove the `String::from("Latte")` we'll face an Ownership error.
+
+
+---
+
 ## Shortcut for structs and fucntions
 
 Nesta lição é mostrado como podemos fazer um atalho quando temos funções que criam instâncias de uma struc
