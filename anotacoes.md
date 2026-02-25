@@ -19,6 +19,52 @@ Descricao
 
 ---
 
+## Shortcut for structs and fucntions
+
+Nesta lição é mostrado como podemos fazer um atalho quando temos funções que criam instâncias de uma struc
+
+exemplo em código:
+
+```rust
+struct Coffe {
+    name: String,
+    price: f64,
+    is_hot: bool,
+}
+
+fn main() {
+    let name = String::from("Mocha");
+
+    let coffe: Coffe = make_coffe(name, 3.99, true);
+
+    println!("{} {} {}", coffe.name, coffe.price, coffe.is_hot)
+}
+
+fn make_coffe(name: String, price: f64, is_hot: bool) -> Coffe {
+    Coffe {
+        name,
+        price,
+        is_hot,
+    }
+}
+```
+
+Isso serve para além de deixar a sintaxe mais simples serve para organizar o código,
+
+
+Mesma coisa para o seguinte código:
+```rust
+
+    let name = String::from("Lattee");
+    let price = 7.98;
+    let is_hot = false;
+
+    let latte = Coffe{name,price, is_hot};
+```
+
+
+---
+
 
 ## 148. Create Structs in a Function
 
