@@ -19,6 +19,60 @@ Descricao
 
 ---
 
+
+## 148. Create Structs in a Function
+
+Nesta aula vamos fazer uma função chamada, cria café.
+
+Que vai receber os dados de um café e criar e retornar uma instância de uma struct.
+
+Vamos nos aprofundar mais nas próximas lições mas nesta vamos mostrar que uma struct também pode ser um tipo válido para retorno.
+
+código:
+```rust
+struct Coffe {
+    name: String,
+    price: f64,
+    is_hot: bool,
+}
+/*
+Movendo uma struct para fora da função main faz com que ela seja enxergada a nível de arquivo sendo assim qualquer função ou lógica que necessita essa struct vai conseguir enxergar ele e puxar ela para o trecho que necessita ela.
+*/
+
+fn main() {
+    let coffe: Coffe = make_coffe(String::from("Mocha"), 3.99, true);
+
+    println!("{} {} {}", coffe.name, coffe.price, coffe.is_hot)
+}
+
+fn make_coffe(name: String, price: f64, is_hot: bool) -> Coffe {
+    Coffe {
+        name: name,
+        price: price,
+        is_hot: is_hot,
+    }
+}
+
+```
+
+Outro exemplo mostrando como a Ownership se comporta
+
+```rust
+    let name = String::from("Mocha");
+
+    let coffe: Coffe = make_coffe(name, 3.99, true);
+
+```
+
+Aqui neste exemplo:
+`name` tem responsabilidade de limpar o valor `mocha` da memória;
+`name` é passado como parâmetro para a função `make_coffe`;
+O parâmtro name dentro da função make_coffe recebe o valor mocha e a responsabilidade de limpá-la;
+Que depois repassa para o campo name dentro da Struct coffe.
+E tudo é repassado para a variável coffe que é responsável pela struct, a struct sendo responsável pelos campos e os campos sendo responsáveis pelos seus valores.
+
+---
+
 ## 147. Overwrite Struct Fields
 
 Nesta lição vamos aprender a substituir os valores dentro de uma instância struct.
