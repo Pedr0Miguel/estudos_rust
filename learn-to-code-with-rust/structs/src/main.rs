@@ -9,7 +9,6 @@ fn main() {
     let coffe: Coffe = make_coffe(String::from("Coffe"), 3.99, true);
 
     let latte: Coffe = make_coffe(String::from("Latter"), ..coffe);
-
     
 
 }

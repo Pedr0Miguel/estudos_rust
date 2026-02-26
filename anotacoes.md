@@ -19,11 +19,25 @@ Descricao
 
 ---
 
+## Structs does not implement the display trait
+
+Earlier in the course we saw that if we put `:?` beside and variables that has an array as it's value we can display it, or use dgb!() we can display too, but using structs we can't use any of theses methods that we have mentioned, luckly rust offers us an another method.
+
+We just need to add an atribute in the line above the "print" we want to use, the atribute we have already seen in the course, is the directive we use to allow us to "break" an compiler rule.
+
+example in code:
+
+```rust
+
+```
+
+---
+
 ## Duplicating values in Structs
 
 Nesta lição vamos aprender quando queremos criar uma nova estrutura baseada em uma outra estrutura já criada.
 
-From now on we will note our ideas and resumes in English, so other people thing "Oh he is intelligent!" or "Oh he is studying in English what a student!"
+From now on we will note our ideas and resumes in English, so other people think "Oh he is intelligent!" or "Oh he is studying in English what a student!"
 
 So going back to our studies.
 
