@@ -1782,6 +1782,98 @@ e se quiser fazer um bloco de código que faça alguma modificação e recomece 
 continue;
 ```
 
+---
+
+## Match Statement
+
+O match é igual ao switch case em muitas linguagens, temos muitos ifs para usar? Usa o match statement que é a mesma ideia de switch case.
+
+Ex:
+
+```rust
+fn main() {
+    let evaluation = false;
+
+    /** 
+     * Neste exemplo estou retornando os valores 20 e 40 a uma variável.
+     * 
+     * Mas é possível adicionar um bloco de código para executar um código
+     * como no código abaixo
+    */ 
+
+    let exemplo = match evaluation {
+        true => 20,
+        false => 40,
+    };
+
+
+
+    print!("{exemplo}");
+}
+
+
+
+fn main() {
+    let evaluation = false;
+
+    match evaluation {
+        true => {
+            print!("TRUE!");
+        }
+        false => {
+            print!("FALSE!");
+        }
+    }
+}
+
+```
+
+Porém no match statement o código tem que retornar o mesmo valor se for usar o primeiro trecho de código.
+
+
+E você precisa mapear todas as possibilidades possíveis dentro do match statement:
+
+exemplo:
+
+```rust
+match evaluation {
+    "verão" => "calor",
+    "inverno" => "frio",
+    //para mapear o que não vier como calor ou inverno
+    _ => "Não importa"
+};
+```
+
+### Colocando condições dentro do match
+
+Podemos colocar condições dentro do match para mapear mais de uma condição:
+
+exemplo:
+
+```rust
+
+    let number: i32 = 8;
+
+    match number {
+        2 | 4 | 6 | 8 | 10 => print!("PAR"),
+        _ => print!("IMPAR"),
+    };
+```
+
+
+OU temos uma outra forma que seria:
+
+```rust
+
+match number {
+    x if x % 2 == 0 => print!("PAR"),
+    x if x % 2 != 0 => print!("IMPAR"),
+    _ => unreachable!(),
+};
+
+```
+
+O unreachable é como dizer que aquela opção nunca vai acontecer e o compilador vai ignorar o _ mas o programador tem que garantir que não tem como acontecer outro caso.
 
 ---
 
