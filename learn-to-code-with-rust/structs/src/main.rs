@@ -5,12 +5,11 @@ struct Coffe {
 }
 
 fn main() {
+    let mut coffe: Coffe = make_coffe(String::from("Coffe"), 3.99, true);
 
-    let coffe: Coffe = make_coffe(String::from("Coffe"), 3.99, true);
+    drink_coffe(&mut coffe);
 
-    let latte: Coffe = make_coffe(String::from("Latter"), ..coffe);
-    
-
+    print!("{}", coffe.price);
 }
 
 fn make_coffe(name: String, price: f64, is_hot: bool) -> Coffe {
@@ -19,4 +18,10 @@ fn make_coffe(name: String, price: f64, is_hot: bool) -> Coffe {
         price,
         is_hot,
     }
+}
+
+fn drink_coffe(coffe: &mut Coffe) {
+    println!("Drinking my {}", coffe.name);
+    coffe.price = 10.99;
+    coffe.is_hot = false;
 }

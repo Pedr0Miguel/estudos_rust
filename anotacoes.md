@@ -17,7 +17,6 @@ Usando o template abaixo:
 
 Descricao 
 
----
 
 ## Structs does not implement the display trait
 
@@ -33,7 +32,118 @@ example in code:
 
 ---
 
-## Duplicating values in Structs
+## 151. Passing Structs into a Function
+
+In this lesson we'll learn the ways to pass an entire struct to a function, there are four ways and we'll learn them deeply.
+
+### First method
+
+Define a parameter that receives struct as an immutable value.
+
+```rust
+fn drink_coffe(coffe: Coffe) {
+    println!("Drinking my {}", coffe.name);
+}
+```
+
+In the method above we receive the whole struct but we can't mutate the values inside it and we receive the ownership of the struct too thus we lose the ability to use the struct outside the function.
+
+example:
+
+```rust
+struct Coffe {
+    name: String,
+    price: f64,
+    is_hot: bool,
+}
+
+fn main() {
+    let coffe: Coffe = make_coffe(String::from("Coffe"), 3.99, true);
+
+    drink_coffe(coffe);
+
+    print!("{}", coffe.name);
+}
+
+fn drink_coffe(coffe: Coffe) {
+    println!("Drinking my {}", coffe.name);
+}
+```
+
+We can't use the coffe.name because coffe in the main function doesn't have the ownership anymore.
+
+
+### Second method
+
+In the first method we couldn't change the values inside the struct, using the `mut` keyword we can change them.
+
+Code:
+```rust
+fn drink_coffe(mut coffe: Coffe) {
+    println!("Drinking my {}", coffe.name);
+    coffe.is_hot = false;
+}
+```
+
+But we are still receiving the struct ownership, thus preventing us to use the original variable in the main function, which leeds us to the third method.
+
+### Third method
+
+The third method consists in instead of passing the whole struct to the function we pass the reference to that function, so we can still use all the values in our function but we can't mutate them 'cause we are passing the immutable reference to that function.
+
+Example in code:
+
+```rust
+fn main(){
+    let coffe: Coffe = make_coffe(String::from("Coffe"), 3.99, true);
+
+    drink_coffe(&coffe);
+
+}
+
+fn drink_coffe(coffe: &Coffe) {
+    println!("Drinking my {}", coffe.name);
+}
+```
+
+When we access the reference we can use the struct in our main function, but we can't mutate the values 'cause it's an immutable reference.
+
+If we want to mutate the values inside the struct in our function, we would need to use the fourth method.
+
+### Fouth method
+
+The fourth method consists in passing a mutable reference to the function which allow us to mutate the values without the ownership of the struct.
+
+Example in code:
+
+```rust
+fn main(){
+    let coffe: Coffe = make_coffe(String::from("Coffe"), 3.99, true);
+
+    drink_coffe(&coffe);
+
+}
+
+fn drink_coffe(coffe: &mut Coffe) {
+    println!("Drinking my {}", coffe.name);
+    coffe.price = 5.99;
+}
+```
+
+### Observations
+
+You may have noticed that we didn't mentioned the original variable name in those functions, why we don't need to mention? Even when we receive the reference to the struct.
+
+In Rust we don't need to mention the variable name to access it's field 'cause:
+The answer is, whenever we have a reference and we use the dot to access a field or to invoka a method, Rust automaticaly deferences it.
+
+What is Dereferencing? Dereferencing is when you access the value a reference is poiting to.
+
+Rust does it automaticaly, it goes to the value in the reference address and changes it or "brings" it to us.
+
+---
+
+## 150. Struct Update Syntax
 
 Nesta lição vamos aprender quando queremos criar uma nova estrutura baseada em uma outra estrutura já criada.
 
