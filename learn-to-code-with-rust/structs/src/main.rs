@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Coffe {
     name: String,
     price: f64,
@@ -9,7 +10,9 @@ fn main() {
 
     drink_coffe(&mut coffe);
 
-    print!("{}", coffe.price);
+    println!("{}", coffe.price);
+
+    println!("{:#?}", coffe);
 }
 
 fn make_coffe(name: String, price: f64, is_hot: bool) -> Coffe {

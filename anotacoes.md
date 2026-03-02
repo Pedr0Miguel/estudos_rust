@@ -18,11 +18,13 @@ Usando o template abaixo:
 Descricao 
 
 
-## Structs does not implement the display trait
+## 152. Deriving Debug Trait for Struct
 
 Earlier in the course we saw that if we put `:?` beside and variables that has an array as it's value we can display it, or use dgb!() we can display too, but using structs we can't use any of theses methods that we have mentioned, luckly rust offers us an another method.
 
-We just need to add an atribute in the line above the "print" we want to use, the atribute we have already seen in the course, is the directive we use to allow us to "break" an compiler rule.
+We just need to add an atribute in the line above the "print" we want to use, the atribute we have already seen in the course, is the directive we use to allow us to "customize" a compiler rule.
+
+
 
 example in code:
 
