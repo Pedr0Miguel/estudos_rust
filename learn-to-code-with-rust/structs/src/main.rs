@@ -15,6 +15,10 @@ impl TaylorSong {
         println!("Released: {}", self.released_year);
         println!("duration: {}", self.duration_sec);
     }
+
+    fn double_duration(mut self) {
+        self.duration_sec *= 2;
+    }
 }
 
 fn main() {

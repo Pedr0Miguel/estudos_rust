@@ -18,6 +18,22 @@ Usando o template abaixo:
 Descricao 
 ---
 
+## 154. self Parameter as Mutable Struct Instance
+
+In this lesson we'll learn about the self parameter as a mutable struct instance.
+
+So in an example the code would look like this:
+
+```rust
+fn double_duration(mut self){
+    self.duration_secs *= 2;
+}
+```
+
+In this example we are still receiving the Ownership of the struct
+
+---
+
 ## 153. Defining Struct Methods
 
 Structs methods are implemented in a different way in rust, in other languages it's just a function in the class instance, but in rust we create a method using the `impl` keyword.
