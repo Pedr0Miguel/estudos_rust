@@ -16,7 +16,30 @@ Usando o template abaixo:
 ## Titulo
 
 Descricao 
+---
 
+## 153. Defining Struct Methods
+
+Structs methods are implemented in a different way in rust, in other languages it's just a function in the class instance, but in rust we create a method using the `impl` keyword.
+
+```rust
+struct Song{
+    title: String,
+    year_released: u32,
+    duration_secs: u32,
+}
+
+
+impl Song{
+    fn displayInfos(self: Self){
+
+    }
+}
+```
+What the Self stands for? It's for the struct itself, because we can pass the name of the strucy, but what if we change the name of the struct in the future? It not just simplifies but the code but protect us from these naming mistakes.
+
+
+---
 
 ## 152. Deriving Debug Trait for Struct
 

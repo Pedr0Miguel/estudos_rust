@@ -1,30 +1,28 @@
-#[derive(Debug)]
-struct Coffe {
-    name: String,
-    price: f64,
-    is_hot: bool,
+struct TaylorSong {
+    title: String,
+    released_year: u32,
+    duration_sec: u32,
 }
 
-fn main() {
-    let mut coffe: Coffe = make_coffe(String::from("Coffe"), 3.99, true);
+impl TaylorSong {
+    fn display_song_info(&self) {
+        // immutable option passing the values but they are immutable and receive Ownership
+        // mutable passing the values but they are mutable and receive Ownership
+        // Immutable reference to the struct instance (not taking ownership)
+        // Mutable reference
 
-    drink_coffe(&mut coffe);
-
-    println!("{}", coffe.price);
-
-    println!("{:#?}", coffe);
-}
-
-fn make_coffe(name: String, price: f64, is_hot: bool) -> Coffe {
-    Coffe {
-        name,
-        price,
-        is_hot,
+        println!("Title: {}", self.title);
+        println!("Released: {}", self.released_year);
+        println!("duration: {}", self.duration_sec);
     }
 }
 
-fn drink_coffe(coffe: &mut Coffe) {
-    println!("Drinking my {}", coffe.name);
-    coffe.price = 10.99;
-    coffe.is_hot = false;
+fn main() {
+    let song = TaylorSong {
+        title: String::from("Blank space"),
+        released_year: 2020,
+        duration_sec: 200,
+    };
+
+    song.display_song_info();
 }
