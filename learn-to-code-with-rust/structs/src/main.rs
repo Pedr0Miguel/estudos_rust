@@ -16,17 +16,20 @@ impl TaylorSong {
         println!("duration: {}", self.duration_sec);
     }
 
-    fn double_duration(mut self) {
+    fn double_duration(&mut self) {
         self.duration_sec *= 2;
     }
 }
 
 fn main() {
-    let song = TaylorSong {
+    let mut song = TaylorSong {
         title: String::from("Blank space"),
         released_year: 2020,
         duration_sec: 200,
     };
 
     song.display_song_info();
+    song.double_duration();
+
+    println!("{}", song.duration_sec);
 }

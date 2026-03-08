@@ -18,6 +18,33 @@ Usando o template abaixo:
 Descricao 
 ---
 
+## 155. self Parameter as Immutable and Mutable References to Struct Instance
+
+In the last two lessons we've learnt the way of manipulating and printing values but receiving the Ownership, how could we manipulate or print them without the Ownership? Using references.
+
+Examples using references:
+
+```rust
+
+    fn display_song_info(&self) {
+        // immutable option passing the values but they are immutable and receive Ownership
+        // mutable passing the values but they are mutable and receive Ownership
+        // Immutable reference to the struct instance (not taking ownership)
+        // Mutable reference
+
+        println!("Title: {}", self.title);
+        println!("Released: {}", self.released_year);
+        println!("duration: {}", self.duration_sec);
+    }
+
+    fn double_duration(&mut self) {
+        self.duration_sec *= 2;
+    }
+    
+```
+
+---
+
 ## 154. self Parameter as Mutable Struct Instance
 
 In this lesson we'll learn about the self parameter as a mutable struct instance.
